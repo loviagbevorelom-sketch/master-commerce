@@ -1,6 +1,9 @@
 import { DeliveryZone, Order, Product, Shop } from "./types";
 
-const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
+const RAW_API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
+const API = RAW_API.replace(/\/+$/, "").endsWith("/api")
+  ? RAW_API.replace(/\/+$/, "")
+  : `${RAW_API.replace(/\/+$/, "")}/api`;
 
 const cacheOpts = { next: { revalidate: 30 } };
 
