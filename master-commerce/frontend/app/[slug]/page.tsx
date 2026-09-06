@@ -61,8 +61,8 @@ export default async function CataloguePage({ params, searchParams }: Props) {
     <>
       <SiteHeader slug={slug} name={shop.name} whatsapp={shop.whatsapp_number} />
 
-      <main className="w-full pt-20 md:pt-24 pb-16 bg-background page-enter">
-        <div className="w-full max-w-[1140px] mx-auto px-6 py-8 md:py-12">
+      <main className="w-full pt-16 md:pt-20 pb-16 bg-background page-enter">
+        <div className="w-full max-w-container-catalog mx-auto px-[var(--container-gutter)] py-8 md:py-12">
 
           {/* ── Top Utility / Quick Cart Strip ───────────────────────── */}
           <div className="flex items-center justify-between gap-4 mb-6">
@@ -83,9 +83,9 @@ export default async function CataloguePage({ params, searchParams }: Props) {
             <div className="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-tertiary/10 blur-2xl pointer-events-none" />
 
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              <div className="max-w-2xl min-w-0 flex-1">
+              <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <h1 className="font-heading text-[28px] sm:text-[36px] md:text-[42px] leading-tight text-on-surface font-extrabold break-words w-full sm:w-auto">
+                  <h1 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-tight text-on-surface font-extrabold break-words w-full sm:w-auto">
                     {shop.name}
                   </h1>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-bold shadow-sm shrink-0">
@@ -94,7 +94,7 @@ export default async function CataloguePage({ params, searchParams }: Props) {
                   </span>
                 </div>
                 {shop.description && (
-                  <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-[90%]">
+                  <p className="text-[clamp(0.9rem,1.2vw,1.05rem)] text-on-surface-variant leading-relaxed">
                     {shop.description}
                   </p>
                 )}
@@ -154,15 +154,21 @@ export default async function CataloguePage({ params, searchParams }: Props) {
             })}
           </div>
 
-          {/* ── Product Grid: 3 Columns Desktop ──────────────────────── */}
+          {/* ── Product Grid: Grille fluide minmax ──────────────────── */}
           {visible.length === 0 ? (
-            <div className="py-20 text-center">
-              <p className="font-body-lg text-body-lg text-on-surface-variant">
-                Aucun plat dans cette catégorie pour le moment.
+            <div className="py-20 text-center flex flex-col items-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center">
+                <span className="material-symbols-outlined text-[32px] text-on-surface-variant">restaurant_menu</span>
+              </div>
+              <p className="font-heading text-lg font-semibold text-on-surface">
+                Aucun plat dans cette catégorie
+              </p>
+              <p className="text-sm text-on-surface-variant">
+                Consultez les autres catégories ou revenez bientôt !
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid gap-5 sm:gap-6" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))' }}>
               {visible.map((p) => (
                 <ProductCard
                   key={p.id}

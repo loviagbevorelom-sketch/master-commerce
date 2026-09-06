@@ -64,7 +64,7 @@ export default function SiteHeader({
     <>
       {/* ── Header Principal ── */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white/96 backdrop-blur-md border-b border-[#eae7e7] shadow-[0_2px_12px_-2px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] transition-shadow">
-        <div className="h-16 md:h-20 max-w-[1140px] mx-auto px-4 md:px-6 flex items-center justify-between gap-3">
+        <div className="h-16 md:h-20 max-w-container-catalog mx-auto px-4 md:px-[var(--container-gutter)] flex items-center justify-between gap-3">
 
           {/* Logo + nom + badge */}
           <div className="flex items-center gap-2.5 min-w-0 flex-1 md:flex-none">

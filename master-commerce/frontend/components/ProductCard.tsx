@@ -49,8 +49,8 @@ export function ProductCard({ product, currency, slug, categoryName }: Props) {
         outOfStock ? "opacity-75" : ""
       }`}
     >
-      {/* ── Image 4:3 ─────────────────────────────────────────────────── */}
-      <div className="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+      {/* ── Image 16:10 desktop, 4:3 mobile ────────────────────────────────── */}
+      <div className="relative w-full aspect-[5/4] bg-surface-container overflow-hidden">
         {imageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -100,24 +100,24 @@ export function ProductCard({ product, currency, slug, categoryName }: Props) {
         )}
       </div>
 
-      {/* ── Contenu ───────────────────────────────────────────────────── */}
-      <div className="flex flex-col flex-1 p-5 justify-between">
+      {/* ── Contenu ──────────────────────────────────────────────────── */}
+      <div className="flex flex-col flex-1 p-4 sm:p-5 justify-between">
         <div>
-          <h2 className="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">
+          <h2 className="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-2 leading-snug">
             {product.name}
           </h2>
           {product.description && (
-            <p className="font-body-md text-body-md text-on-surface-variant line-clamp-2 leading-relaxed">
+            <p className="font-body-md text-body-md text-on-surface-variant line-clamp-2 leading-relaxed text-[0.82rem]">
               {product.description}
             </p>
           )}
         </div>
 
         {/* Prix + bouton */}
-        <div className="flex items-center justify-between pt-5 mt-4 border-t border-[#f5f2f2]">
+        <div className="flex items-center justify-between pt-4 mt-4 border-t border-[#f5f2f2]">
           <div className="flex items-baseline gap-2">
             <span
-              className={`font-numeric-price text-[18px] font-black tracking-tight ${
+              className={`font-numeric-price text-[clamp(1rem,2.2vw,1.2rem)] font-black tracking-tight ${
                 outOfStock ? "text-on-surface-variant" : "text-[#D32F2F]"
               }`}
             >

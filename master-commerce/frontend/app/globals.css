@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  /* ── Typographie de base fluide ────────────────────────────────── */
   html {
     scroll-behavior: smooth;
+    /* Taille de base fluide : 15px (mobile) → 17px (desktop large) */
+    font-size: clamp(15px, 1.5vw, 17px);
   }
 
   body {
@@ -13,10 +16,17 @@
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Évite tout zoom artificiel – seule la base fluid est appliquée */
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  p, li {
+    text-wrap: pretty;
+    max-width: 75ch;
   }
 
   ::selection {
@@ -24,39 +34,47 @@
     color: #ffffff;
   }
 
-  /* ── Scrollbar minimaliste (visible si nécessaire) ── */
-  /* On cache la scrollbar globalement sur les éléments non-scrollables */
-  /* mais on la laisse visible sur les zones défilantes importantes */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  /* ── Tokens CSS Globaux ─────────────────────────────────────────── */
+  :root {
+    /* Conteneurs multi-contextes */
+    --container-tunnel: 540px;      /* Formulaires étroits, auth */
+    --container-narrow: 680px;      /* Confirmation, ticket */
+    --container-medium: 960px;      /* Suivi, checkout */
+    --container-catalog: 1240px;    /* Catalogue boutique */
+    --container-wide: 1400px;       /* Dashboard admin */
+    --container-gutter: clamp(1rem, 3vw, 2rem);
+
+    /* Espacement vertical de section */
+    --section-gap: clamp(2rem, 5vw, 4rem);
+
+    /* En-tête fixe */
+    --header-height: 4rem;          /* 64px mobile */
+    --header-height-desktop: 5rem;  /* 80px desktop */
   }
 
-  ::-webkit-scrollbar-track {
-    background: transparent;
+  @media (min-width: 768px) {
+    :root {
+      --header-height: var(--header-height-desktop);
+    }
   }
 
+  /* ── Scrollbar minimaliste ──────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
     background: rgba(90, 65, 59, 0.18);
     border-radius: 99px;
   }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(90, 65, 59, 0.35); }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(90, 65, 59, 0.35);
-  }
-
-  /* Masquer sur les éléments non-scrollables (nav, pills, etc.) */
   nav::-webkit-scrollbar,
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  nav,
-  .no-scrollbar {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  nav, .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
-  /* Material Symbols */
+  /* ── Material Symbols ───────────────────────────────────────────── */
   .material-symbols-outlined {
     font-family: "Material Symbols Outlined";
     font-weight: normal;
@@ -73,14 +91,11 @@
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   }
 
-  /* Safe area insets */
-  .pb-safe {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  .pt-safe {
-    padding-top: env(safe-area-inset-top, 0px);
-  }
+  /* Safe area insets (notch, PWA) */
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
 }
+
 
 @layer utilities {
   /* Ticket thermal paper edge — zigzag bottom */

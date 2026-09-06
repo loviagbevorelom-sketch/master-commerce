@@ -64,7 +64,7 @@ export default function AdminPage() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl min-h-screen pb-16 bg-background text-on-surface page-enter">
+    <main className="mx-auto max-w-container-medium min-h-screen pb-16 bg-background text-on-surface page-enter">
       {/* Header Sticky */}
       <header className="px-6 py-4 sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-surface-container-high flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.05)]">
         <div>
@@ -98,7 +98,7 @@ export default function AdminPage() {
       </header>
 
       {/* Liste des boutiques */}
-      <section className="px-6 mt-6 space-y-4">
+      <section className="px-4 sm:px-6 mt-6 space-y-4">
         {loading ? (
           <div className="text-center py-12">
             <div className="inline-block w-6 h-6 border-2 border-[#D32F2F] border-t-transparent rounded-full animate-spin" />
@@ -195,7 +195,7 @@ export default function AdminPage() {
       {/* Formulaire de création */}
       <form
         onSubmit={createShop}
-        className="mx-6 mt-6 rounded-2xl p-5 bg-white border border-surface-container-high shadow-card flex flex-col gap-4"
+        className="mx-4 sm:mx-6 mt-6 rounded-2xl p-5 bg-white border border-surface-container-high shadow-card flex flex-col gap-4"
       >
         <div>
           <h2 className="font-heading text-[15px] font-bold text-on-surface">
