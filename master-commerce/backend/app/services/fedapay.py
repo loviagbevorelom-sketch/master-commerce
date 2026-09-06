@@ -17,7 +17,8 @@ def create_fedapay_transaction(
     Retourne un dictionnaire avec 'transaction_id' et 'payment_url'.
     """
     int_amount = int(round(amount))
-    callback_url = f"http://localhost:8000/api/public/fedapay/callback?ref={order_ref}"
+    api_base_url = settings.PUBLIC_API_URL.rstrip("/")
+    callback_url = f"{api_base_url}/api/public/fedapay/callback?ref={order_ref}"
 
     headers = {
         "Authorization": f"Bearer {settings.FEDAPAY_SECRET_KEY}",
@@ -72,7 +73,7 @@ def create_fedapay_transaction(
 
     # Fallback / Simulation Sandbox active pour les démos & tests sans connexion FedaPay live
     fallback_trans_id = f"fedapay_sbx_{order_ref}"
-    fallback_url = f"http://localhost:8000/api/public/fedapay/sandbox-pay-page?ref={order_ref}&amount={int_amount}"
+    fallback_url = f"{api_base_url}/api/public/fedapay/sandbox-pay-page?ref={order_ref}&amount={int_amount}"
     return {
         "transaction_id": fallback_trans_id,
         "payment_url": fallback_url,

@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
     PLATFORM_OWNER_EMAIL: str = "owner@mastercommerce.app"
     PLATFORM_OWNER_PASSWORD: str = "owner-mc-admin123"
+    PUBLIC_API_URL: str = "https://master-commerce-api.onrender.com"
 
     # FedaPay Sandbox Configuration
     FEDAPAY_SECRET_KEY: str = "sk_sandbox_secret_key_demo"

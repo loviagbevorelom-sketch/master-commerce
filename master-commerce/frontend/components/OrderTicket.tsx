@@ -168,8 +168,9 @@ export default function OrderTicket({ slug, order }: { slug: string; order: Orde
           <div className="flex items-center gap-2 text-blue-900 font-bold text-sm">
             <span>⚡ Payer via FedaPay Sandbox</span>
           </div>
-          <p className="text-xs text-blue-800">
-            Finalisez votre règlement via Mobile Money (T-Money, Flooz) ou Carte bancaire Sandbox.
+          <p className="text-xs text-blue-800 leading-relaxed">
+            <strong>Mode Sandbox FedaPay :</strong> Sélectionnez l&apos;opérateur <em>&quot;Momo Test&quot;</em> et utilisez le numéro de test Togolais <strong>+228 90 00 00 00</strong> (ou le bouton vert ci-dessous). <br />
+            <span className="text-[11px] opacity-80">* En mode Production Live, FedaPay affiche automatiquement Mix by Yas (T-Money) et Moov Togo (Flooz).*</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-2 pt-1">
             {order.payment_url && (

@@ -5,9 +5,11 @@ function digits(n?: string): string {
 export default function SiteFooter({
   name,
   whatsapp,
+  slug = "kubafoodies",
 }: {
   name: string;
   whatsapp?: string;
+  slug?: string;
 }) {
   const wa = digits(whatsapp);
   const cleanName = name.split("—")[0].trim();
@@ -57,7 +59,7 @@ export default function SiteFooter({
             Navigation
           </span>
           <nav className="flex flex-col gap-2.5">
-            <a href="#menu" className="text-white/60 text-[13px] hover:text-white transition-colors">
+            <a href={`/${slug}#menu`} className="text-white/60 text-[13px] hover:text-white transition-colors">
               Menu &amp; Plats
             </a>
             {wa && (
@@ -70,7 +72,7 @@ export default function SiteFooter({
                 Service Traiteur
               </a>
             )}
-            <a href="#commandes" className="text-white/60 text-[13px] hover:text-white transition-colors">
+            <a href={`/${slug}/commandes`} className="text-white/60 text-[13px] hover:text-white transition-colors">
               Suivi de commande
             </a>
           </nav>
