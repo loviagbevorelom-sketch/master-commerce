@@ -42,6 +42,7 @@ def get_shop(slug: str, db: Session = Depends(get_db)):
         "slug": s.slug,
         "description": s.description,
         "currency": s.currency,
+        "whatsapp_number": s.whatsapp_number,
     }
 
 
