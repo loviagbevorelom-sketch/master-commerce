@@ -56,7 +56,9 @@ export default function SiteHeader({
   const inactivePillClass =
     "inline-flex items-center justify-center px-4 py-2 rounded-full text-[13px] text-[#555] hover:text-[#1c1b1b] hover:bg-white hover:shadow-sm transition-all duration-200 font-medium leading-none";
 
-  const brandName = shop.name ? shop.name.split("—")[0].trim() : "Kubafoodies";
+  const brandName = shop.name
+    ? shop.name.split("—")[0].split("–")[0].replace(/\uFFFD/g, "").trim()
+    : "Kubafoodies";
 
   return (
     <>
@@ -75,7 +77,7 @@ export default function SiteHeader({
                   src="/images/logo-icon.png"
                 />
               </div>
-              <span className="font-heading text-[17px] md:text-[18px] text-on-surface tracking-tight font-bold group-hover:text-[#D32F2F] transition-colors truncate max-w-[140px] sm:max-w-none">
+              <span className="font-heading text-[17px] md:text-[18px] text-on-surface tracking-tight font-bold group-hover:text-[#D32F2F] transition-colors truncate max-w-[220px] sm:max-w-none">
                 {brandName}
               </span>
             </Link>
