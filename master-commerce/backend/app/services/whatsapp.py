@@ -1,0 +1,43 @@
+"""⭐ SEUL endroit du projet où un lien WhatsApp est construit (R5)."""
+from urllib.parse import quote
+
+
+def build_checkout_link(
+    shop_name: str,
+    whatsapp_number: str,
+    currency: str,
+    lines: list,
+    customer_name: str,
+    customer_phone: str,
+    customer_zone: str,
+    *,
+    reception_mode: str = "delivery",
+    delivery_fee: float = 0.0,
+    order_ref: str | None = None,
+) -> str:
+    number = whatsapp_number.lstrip("+")
+    lines_txt = "\n".join(
+        f"• {p.name} x{qty} — {unit:,.0f} {currency}".replace(",", " ")
+        for p, qty, unit in lines
+    )
+    subtotal = sum(unit * qty for _, qty, unit in lines)
+    total = subtotal + delivery_fee
+    total_txt = f"{total:,.0f} {currency}".replace(",", " ")
+    parts = [f"🛍️ *Nouvelle commande — {shop_name}*"]
+    if order_ref:
+        parts.append(f"Réf : {order_ref}")
+    parts.extend(["", lines_txt])
+    parts.append("")
+    parts.append(f"*Sous-total : {subtotal:,.0f} {currency}*".replace(",", " "))
+    if reception_mode == "pickup":
+        parts.append("🛍️ *Retrait sur place* (gratuit)")
+    else:
+        parts.append(f"🚚 Livraison ({customer_zone}) : {delivery_fee:,.0f} {currency}".replace(",", " "))
+    parts.append("")
+    parts.append(f"*Total : {total_txt}*")
+    parts.append("")
+    parts.append(f"👤 {customer_name}\n📞 {customer_phone}")
+    parts.append("")
+    parts.append("Merci de confirmer ma commande 🙏")
+    message = "\n".join(parts)
+    return f"https://wa.me/{number}?text={quote(message)}"

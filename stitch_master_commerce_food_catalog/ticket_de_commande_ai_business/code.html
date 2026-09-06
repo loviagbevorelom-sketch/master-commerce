@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#ffdbca", "on-primary-fixed": "#002109", "error": "#ba1a1a", "tertiary-container": "#da3437", "tertiary-fixed-dim": "#ffb3ad", "error-container": "#ffdad6", "primary-fixed-dim": "#62df7d", "on-secondary": "#ffffff", "on-background": "#1d1b19", "surface-container-low": "#f9f2ee", "outline-variant": "#bdcaba", "inverse-on-surface": "#f6efeb", "surface-variant": "#e8e1dd", "tertiary-fixed": "#ffdad7", "surface": "#fff8f4", "surface-container": "#f3ede9", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#783200", "inverse-primary": "#62df7d", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "background": "#fff8f4", "secondary": "#9d4300", "primary-container": "#00873a", "on-secondary-container": "#5c2400", "on-surface-variant": "#3e4a3d", "surface-tint": "#006e2d", "on-tertiary-fixed": "#410004", "surface-dim": "#dfd9d5", "surface-bright": "#fff8f4", "primary": "#006b2c", "primary-fixed": "#7ffc97", "outline": "#6e7b6c", "on-primary-fixed-variant": "#005320", "on-primary-container": "#f7fff2", "on-tertiary-container": "#fffbff", "on-tertiary-fixed-variant": "#930013", "inverse-surface": "#33302d", "surface-container-highest": "#e8e1dd", "surface-container-high": "#ede7e3", "on-secondary-fixed": "#341100", "secondary-container": "#fd761a", "on-surface": "#1d1b19", "secondary-fixed-dim": "#ffb690", "tertiary": "#b61722" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "0.75rem", "space-lg": "1.25rem", "margin-desktop": "2rem", "space-md": "1rem", "space-2xl": "2rem", "space-xs": "0.5rem", "space-3xl": "2.5rem", "margin-mobile": "1rem", "space-2xs": "0.25rem", "space-xl": "1.5rem", "gutter-desktop": "1.5rem", "space-sm": "0.75rem" }, "fontFamily": { "body-md": ["Outfit"], "headline-sm": ["Outfit"], "display-lg-mobile": ["Outfit"], "price-tag": ["Outfit"], "body-sm": ["Outfit"], "label-sm": ["Outfit"], "label-md": ["Outfit"], "display-lg": ["Outfit"], "headline-lg": ["Outfit"], "headline-md": ["Outfit"], "body-lg": ["Outfit"], "label-lg": ["Outfit"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "price-tag": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary text-[20px]">restaurant</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate max-w-[200px]">Commandes</span></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-full"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 px-margin-mobile bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-lg pb-space-2xl">
+<!-- Top Order Progress Micro-Banner -->
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-low rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface">Commande en cours</span>
+</div>
+<div class="flex items-center gap-space-2xs text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>Expire dans 14:38</span>
+</div>
+</div>
+<!-- Reçu Ticket Central -->
+<div class="relative w-full bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden" style="border: 2px dashed #bdcaba;">
+<!-- Decorative Ticket Cutouts (Semi-circles) -->
+<div class="absolute left-[-14px] top-[260px] w-7 h-7 rounded-full bg-surface" style="box-shadow: inset -2px 0 0 #bdcaba;"></div>
+<div class="absolute right-[-14px] top-[260px] w-7 h-7 rounded-full bg-surface" style="box-shadow: inset 2px 0 0 #bdcaba;"></div>
+<!-- Ticket Top Edge Zig-Zag Teeth SVG Accent -->
+<div class="w-full h-3 bg-surface-container-highest overflow-hidden flex items-center">
+<svg class="w-full h-3 text-surface-container-lowest fill-current" preserveaspectratio="none" viewbox="0 0 200 10">
+<polygon points="0,10 5,0 10,10 15,0 20,10 25,0 30,10 35,0 40,10 45,0 50,10 55,0 60,10 65,0 70,10 75,0 80,10 85,0 90,10 95,0 100,10 105,0 110,10 115,0 120,10 125,0 130,10 135,0 140,10 145,0 150,10 155,0 160,10 165,0 170,10 175,0 180,10 185,0 190,10 195,0 200,10"></polygon>
+</svg>
+</div>
+<!-- Ticket Header -->
+<div class="flex flex-col items-center text-center p-space-lg gap-space-xs">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary mb-space-2xs shadow-sm">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">soup_kitchen</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight flex items-center justify-center gap-space-2xs">
+        Ai Business 🍲 - Lomé
+      </h1>
+<span class="font-mono text-body-sm font-semibold tracking-wider text-on-surface-variant bg-surface-container px-space-sm py-0.5 rounded-md">
+        TICKET MC-20250214-A7X9K3
+      </span>
+<!-- Status Pills Badge row -->
+<div class="flex items-center gap-space-xs mt-space-2xs flex-wrap justify-center">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full shadow-sm">
+<span class="text-[13px]">⏳</span>
+<span class="font-label-md text-label-md">En attente de paiement</span>
+</div>
+<span class="text-outline-variant text-[11px] font-body-sm">(Variante : <span class="text-primary font-semibold">✅ Payée</span>)</span>
+</div>
+<div class="flex items-center gap-1.5 text-outline text-body-sm font-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Passé le 14/02/2025 à 18:42:07</span>
+</div>
+</div>
+<!-- Cutout perforation divider line -->
+<div class="relative w-full my-space-xs">
+<div class="w-full" style="border-top: 2px dashed #bdcaba;"></div>
+</div>
+<!-- Ticket Body: Items Breakdown -->
+<div class="p-space-lg flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="flex items-baseline w-full font-body-md text-body-md text-on-surface">
+<span class="font-semibold text-on-surface shrink-0">2x Pinon sauce adjo</span>
+<span class="flex-1 mx-2 overflow-hidden text-outline-variant font-mono text-[13px] tracking-widest whitespace-nowrap select-none">..................................................</span>
+<span class="font-price-tag text-price-tag text-on-surface shrink-0">2 000 FCFA</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-baseline w-full font-body-md text-body-md text-on-surface">
+<span class="font-semibold text-on-surface shrink-0">1x Tchiep poulet</span>
+<span class="flex-1 mx-2 overflow-hidden text-outline-variant font-mono text-[13px] tracking-widest whitespace-nowrap select-none">..................................................</span>
+<span class="font-price-tag text-price-tag text-on-surface shrink-0">2 500 FCFA</span>
+</div>
+<!-- Item 3: Delivery -->
+<div class="flex items-baseline w-full font-body-md text-body-md text-on-surface">
+<span class="text-on-surface-variant shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">moped</span>
+          Frais livraison (Adidogomé)
+        </span>
+<span class="flex-1 mx-2 overflow-hidden text-outline-variant font-mono text-[13px] tracking-widest whitespace-nowrap select-none">..................................................</span>
+<span class="font-price-tag text-price-tag text-on-surface shrink-0">1 000 FCFA</span>
+</div>
+<!-- Dashed Separation -->
+<div class="w-full my-space-xs" style="border-top: 1.5px dashed #bdcaba;"></div>
+<!-- TOTAL ROW -->
+<div class="flex items-baseline justify-between w-full pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface">TOTAL À PAYER</span>
+<span class="font-body-sm text-body-sm text-outline">TVA incluse • Net à régler</span>
+</div>
+<div class="text-right">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary tracking-tight">3 700</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary ml-1">FCFA</span>
+</div>
+</div>
+<!-- Digital Signature / Integrity Hash -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-xs text-outline">
+<span class="material-symbols-outlined text-[18px] shrink-0 text-outline">verified</span>
+<p class="font-mono text-[10px] leading-tight break-all">
+          Empreinte f3a9c1e8d4b270a6c9e013f778a4b2c1 — toute modification invalide ce ticket
+        </p>
+</div>
+</div>
+<!-- Ticket Bottom Receipt Serration -->
+<div class="w-full h-3 bg-surface overflow-hidden flex items-center">
+<svg class="w-full h-3 text-surface-container-lowest fill-current rotate-180" preserveaspectratio="none" viewbox="0 0 200 10">
+<polygon points="0,10 5,0 10,10 15,0 20,10 25,0 30,10 35,0 40,10 45,0 50,10 55,0 60,10 65,0 70,10 75,0 80,10 85,0 90,10 95,0 100,10 105,0 110,10 115,0 120,10 125,0 130,10 135,0 140,10 145,0 150,10 155,0 160,10 165,0 170,10 175,0 180,10 185,0 190,10 195,0 200,10"></polygon>
+</svg>
+</div>
+</div>
+<!-- SECTION HISTORIQUE -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="text-[20px]">📜</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Historique</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">3 événements</span>
+</div>
+<!-- Timeline list -->
+<div class="relative pl-6 space-y-space-md">
+<!-- Vertical timeline spine line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-variant"></div>
+<!-- Event 1: 18:42 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-primary-fixed flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-on-primary-fixed text-[12px] font-bold">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-md text-label-md text-primary font-bold">18:42</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Commande créée par le client</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Via l'application web mobile Ai Business Lomé</span>
+</div>
+</div>
+<!-- Event 2: 18:43 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center ring-4 ring-surface-container-lowest animate-pulse">
+<span class="material-symbols-outlined text-secondary text-[12px] font-bold">sync</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-md text-label-md text-secondary font-bold">18:43</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Paiement T-Money en cours</span>
+</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono text-[11px] text-outline px-1.5 py-0.5 bg-surface-container rounded">txn #FL99231</span>
+<span class="text-body-sm text-body-sm text-on-surface-variant">— En attente de validation USSD</span>
+</div>
+</div>
+</div>
+<!-- Event 3: 18:45 -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-surface-variant flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-on-surface-variant text-[12px]">send</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant font-bold">18:45</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Notification envoyée au commerçant</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cuisine prévenue pour préparation du Pinon et Tchiep</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Courier Visual Card (Moments of Delight) -->
+<div class="w-full bg-surface-container-low rounded-2xl p-space-md flex items-center gap-space-md shadow-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container-highest shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait chaleureux d'un jeune livreur togolais souriant avec casque de moto jaune et polo vert foncé, lumière dorée de fin d'après-midi à Lomé, photoréaliste et authentique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbkNeLMZVPRrlF-qtP9wzV9QP40KKZWCiFlmcICg3xNDQKokJa5vwo35bY6b8RWVk-scLRxHQeDJJvNfeg-8jVXDIy5eRebyrmdvS3mGqBKbGIDT__Ww1xb5twwNyQvMuvylzAWiIokpfPq1HSi8XCEZOVVc55D0u9-ezzH6Qd74K5nxEGg9iBlPEN2v9ybjQBNs8VEYIkk2-Pp4d9b2MVXYJSe5xJqmxaknyLvn0RMf99s4Stn98Q"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Koffi E. • Livreur express</span>
+<span class="inline-flex items-center text-secondary text-body-sm font-bold">
+          ★ 4.9
+        </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Prêt pour ramassage dès confirmation</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">directions_bike</span>
+</button>
+</div>
+<!-- ACTIONS BOTTOM FIXED/FLOW -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Grand CTA Vert Principal -->
+<button class="w-full h-[54px] rounded-full bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform" id="pay-btn">
+<span class="material-symbols-outlined text-[22px]">contactless</span>
+<span>Payer avec T-Money / Flooz 💳</span>
+</button>
+<!-- Bouton Secondaire Doux -->
+<button class="w-full h-[48px] rounded-[14px] bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>📲 Contacter la boutique à propos de cette commande</span>
+</button>
+<!-- Quick Micro actions -->
+<div class="flex items-center justify-center gap-space-lg pt-space-2xs text-on-surface-variant">
+<button class="flex items-center gap-1 font-label-sm text-label-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span>Partager le reçu</span>
+</button>
+<span class="text-outline-variant">•</span>
+<button class="flex items-center gap-1 font-label-sm text-label-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger PDF</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for payment button tap
+  const payBtn = document.getElementById('pay-btn');
+  if (payBtn) {
+    payBtn.addEventListener('click', () => {
+      const originalContent = payBtn.innerHTML;
+      payBtn.innerHTML = `
+        <span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span>
+        <span>Ouverture du portail USSD...</span>
+      `;
+      payBtn.classList.add('opacity-90');
+      setTimeout(() => {
+        payBtn.innerHTML = originalContent;
+        payBtn.classList.remove('opacity-90');
+      }, 2000);
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-gutter-mobile"><a class="flex flex-col items-center justify-center gap-space-2xs min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogue" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm">Catalogue</span></a><a class="flex flex-col items-center justify-center gap-space-2xs min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="panier" href="#"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="font-label-sm text-label-sm">Panier</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-space-2xs min-w-[44px] min-h-[44px] transition-colors text-primary font-bold" data-path="commandes" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm">Commandes</span></a><a class="flex flex-col items-center justify-center gap-space-2xs min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="profil-admin" href="#"><span class="material-symbols-outlined text-[22px]">manage_accounts</span><span class="font-label-sm text-label-sm">Profil/Admin</span></a></div></nav></body></html>

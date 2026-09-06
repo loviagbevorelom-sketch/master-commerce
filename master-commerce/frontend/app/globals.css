@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fcf9f8;
+    color: #1c1b1b;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: #b02609;
+    color: #ffffff;
+  }
+
+  /* ── Scrollbar minimaliste (visible si nécessaire) ── */
+  /* On cache la scrollbar globalement sur les éléments non-scrollables */
+  /* mais on la laisse visible sur les zones défilantes importantes */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(90, 65, 59, 0.18);
+    border-radius: 99px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(90, 65, 59, 0.35);
+  }
+
+  /* Masquer sur les éléments non-scrollables (nav, pills, etc.) */
+  nav::-webkit-scrollbar,
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  nav,
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Material Symbols */
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+
+  /* Safe area insets */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+@layer utilities {
+  /* Ticket thermal paper edge — zigzag bottom */
+  .ticket-edge-bottom {
+    mask-image: radial-gradient(circle at 6px 0, transparent 6px, black 6px);
+    mask-size: 12px 6px;
+    mask-position: 0 100%;
+    mask-repeat: repeat-x;
+  }
+
+  /* Focus ring Stitch style */
+  .focus-stitch:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(176, 38, 9, 0.12);
+    border-color: #b02609;
+  }
+
+  /* WhatsApp button glow */
+  .shadow-whatsapp {
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  }
+
+  /* Masquer scrollbar utilitaire */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Animation d'entrée douce pour les modales/drawers */
+  .animate-slide-in-right {
+    animation: slideInRight 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-slide-out-right {
+    animation: slideOutRight 0.22s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.25s ease forwards;
+  }
+  .animate-fade-out {
+    animation: fadeOut 0.2s ease forwards;
+  }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+  }
+  @keyframes slideOutRight {
+    from { transform: translateX(0); }
+    to   { transform: translateX(100%); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  /* Animations douces de transition de page et d'onglets */
+  .page-enter {
+    animation: pageEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tab-enter {
+    animation: tabEnter 0.22s ease-out forwards;
+  }
+  @keyframes tabEnter {
+    from {
+      opacity: 0;
+      transform: scale(0.99);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

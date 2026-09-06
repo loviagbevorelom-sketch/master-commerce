@@ -1,0 +1,68 @@
+# Render Blueprint configuration for Master Commerce (Kubafoodies)
+# Documentation: https://render.com/docs/blueprint-spec
+
+databases:
+  - name: master-commerce-db
+    databaseName: mastercommerce
+    user: mastercommerce_user
+    plan: free # Change to starter for production persistent storage
+    region: frankfurt # or oregon / ohio
+
+services:
+  # -------------------------------------------------------------
+  # BACKEND SERVICE (FastAPI Python)
+  # -------------------------------------------------------------
+  - type: web
+    name: master-commerce-api
+    runtime: python
+    region: frankfurt
+    plan: free
+    rootDir: master-commerce/backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: master-commerce-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ENVIRONMENT
+        value: production
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 1440
+      - key: CORS_ORIGINS
+        value: "https://*.onrender.com,http://localhost:3000"
+      - key: FEDAPAY_ENVIRONMENT
+        value: sandbox
+      - key: FEDAPAY_SECRET_KEY
+        sync: false # Set via Render Dashboard or leave sandbox default
+      - key: FEDAPAY_PUBLIC_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
+  # -------------------------------------------------------------
+  # FRONTEND SERVICE (Next.js 14 React)
+  # -------------------------------------------------------------
+  - type: web
+    name: master-commerce-web
+    runtime: node
+    region: frankfurt
+    plan: free
+    rootDir: master-commerce/frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.17.0
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: master-commerce-api
+          type: web
+          property: url
+      - key: NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY
+        sync: false

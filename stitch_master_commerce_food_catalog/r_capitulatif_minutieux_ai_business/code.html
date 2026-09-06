@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#ffdbca", "on-primary-fixed": "#002109", "error": "#ba1a1a", "tertiary-container": "#da3437", "tertiary-fixed-dim": "#ffb3ad", "error-container": "#ffdad6", "primary-fixed-dim": "#62df7d", "on-secondary": "#ffffff", "on-background": "#1d1b19", "surface-container-low": "#f9f2ee", "outline-variant": "#bdcaba", "inverse-on-surface": "#f6efeb", "surface-variant": "#e8e1dd", "tertiary-fixed": "#ffdad7", "surface": "#fff8f4", "surface-container": "#f3ede9", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#783200", "inverse-primary": "#62df7d", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "background": "#fff8f4", "secondary": "#9d4300", "primary-container": "#00873a", "on-secondary-container": "#5c2400", "on-surface-variant": "#3e4a3d", "surface-tint": "#006e2d", "on-tertiary-fixed": "#410004", "surface-dim": "#dfd9d5", "surface-bright": "#fff8f4", "primary": "#006b2c", "primary-fixed": "#7ffc97", "outline": "#6e7b6c", "on-primary-fixed-variant": "#005320", "on-primary-container": "#f7fff2", "on-tertiary-container": "#fffbff", "on-tertiary-fixed-variant": "#930013", "inverse-surface": "#33302d", "surface-container-highest": "#e8e1dd", "surface-container-high": "#ede7e3", "on-secondary-fixed": "#341100", "secondary-container": "#fd761a", "on-surface": "#1d1b19", "secondary-fixed-dim": "#ffb690", "tertiary": "#b61722" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "0.75rem", "space-lg": "1.25rem", "margin-desktop": "2rem", "space-md": "1rem", "space-2xl": "2rem", "space-xs": "0.5rem", "space-3xl": "2.5rem", "margin-mobile": "1rem", "space-2xs": "0.25rem", "space-xl": "1.5rem", "gutter-desktop": "1.5rem", "space-sm": "0.75rem" }, "fontFamily": { "body-md": ["Outfit"], "headline-sm": ["Outfit"], "display-lg-mobile": ["Outfit"], "price-tag": ["Outfit"], "body-sm": ["Outfit"], "label-sm": ["Outfit"], "label-md": ["Outfit"], "display-lg": ["Outfit"], "headline-lg": ["Outfit"], "headline-md": ["Outfit"], "body-lg": ["Outfit"], "label-lg": ["Outfit"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "price-tag": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary rounded-full" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate max-w-[200px]">Validation Commande</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe px-margin-mobile bg-surface min-h-screen"><div class="flex flex-col w-full pb-32">
+<section class="py-space-xs mb-space-sm">
+<div class="flex items-center gap-space-2xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Vérifiez votre commande</h2>
+<span class="text-headline-md">👀</span>
+</div>
+<p class="font-body-md text-body-md text-outline">Vous pouvez encore tout modifier</p>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Vos délices sélectionnés</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">3 articles</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-16 h-16 rounded-[12px] overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up delicious Beninese crispy grilled pastels appetizers served on warm artisanal ceramic plate with aromatic chili sauce, professional culinary photography, bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkxQi43VwFrUzCiynAhwuiu2JuxzhtCed67sk9IpJXYfCIUBwmzo_1Y3e6uTQaAg4VkxpSMz6zuR2JKK3HL6ZTvVGUZAo3FIQ-Fufg3wVkImTS5MmmaAhAV13iNY_vsAuyRMymc37TJ22u3HG5qysKqpxPT9FVIa0UwaoamrSU_TTQCRDqub3uvmHXOz87uKXKsbCaJgg6IdhghNoS25jrGv97c5jD35UKBzQIc-BtbcLdZBoKnPr"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Pastels dorés épicés</h3>
+<span class="font-price-tag text-price-tag text-primary flex-shrink-0">2 000 FCFA</span>
+</div>
+<div class="flex items-center justify-between mt-space-2xs">
+<span class="font-body-sm text-body-sm text-outline">2 × 1 000 FCFA</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary px-2 py-0.5 rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Disponible
+            </span>
+</div>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<div class="flex items-center gap-space-sm">
+<div class="w-16 h-16 rounded-[12px] overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Savory Beninese Tchiep rice served with succulent charred grilled chicken, golden caramelized onions and red pepper garnish, modern African gourmet styling, overhead food photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApgkgPjNjntbCdY642W0DWUWNC6QrKY-ah2KC4p2EG6oreVdH-vV3-AzI0Pc4vMzubjYXNgwfD6MQU6PUP_YWewhbwmJrBfrgkOFieD8-uYi3Cad6xL9QRnp92y9ql3WYCKdwg_KU2_e1BPPTQKBY31MLGasF8SBUhVoLNq4wdVIkv_pXyLRwVmFYSmF5jFgU-gFV0cERFJauvbPJ4Oj9w-2xwd6GfxIKu7EEDOhTHg42xG-iC8bTt"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Tchiep poulet braisé</h3>
+<span class="font-price-tag text-price-tag text-primary flex-shrink-0">2 500 FCFA</span>
+</div>
+<div class="flex items-center justify-between mt-space-2xs">
+<span class="font-body-sm text-body-sm text-outline">1 × 2 500 FCFA</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary px-2 py-0.5 rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Disponible
+            </span>
+</div>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<div class="flex items-center gap-space-sm">
+<div class="w-16 h-16 rounded-[12px] overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional hot green tea infusion in handcrafted glass cup with fresh mint leaves and infusion sachets beside steam rising, soothing warm organic mood lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp1azkZZRaHneciFLiK-8ExlVkPtL_Jst7H0azYJuQyJRREys4fjlLzFarg2L-t-Ikizu1B7zczYV0DR1ujSpqmqiy-4JQ2jb-rFFPLVzGE-NVko_Yo0a7wzdpWHaU5hPp1V8xMJ0clw5S8sKUksjZtQxJj2i2YC4O7GLX_rJ6uQGcnYTOerqjeULcOz4__-gNOtweMcPOCz1PMrOv9Sw_HmHlbdGHoZlBub9etiQ5QtYfT-G3bpVI"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Thé vert en sachets</h3>
+<span class="font-price-tag text-price-tag text-primary flex-shrink-0">700 FCFA</span>
+</div>
+<div class="flex items-center justify-between mt-space-2xs">
+<span class="font-body-sm text-body-sm text-outline">1 × 700 FCFA</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary px-2 py-0.5 rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Disponible
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="text-[20px]">📍</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mode de réception</h3>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mb-space-md" id="reception-toggle">
+<div class="cursor-pointer rounded-xl p-space-sm bg-surface-container-low flex flex-col justify-between transition-all duration-200" id="opt-pickup" onclick="selectReception('pickup')">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-[22px]">🛍️</span>
+<div class="w-4 h-4 rounded-full bg-surface-container flex items-center justify-center">
+<div class="w-2 h-2 rounded-full hidden" id="radio-pickup"></div>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Retrait sur place</p>
+<p class="font-body-sm text-body-sm text-outline">Gratuit (au restaurant)</p>
+</div>
+</div>
+<div class="cursor-pointer rounded-xl p-space-sm bg-primary/10 shadow-sm flex flex-col justify-between transition-all duration-200" id="opt-delivery" onclick="selectReception('delivery')">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-[22px]">🚚</span>
+<div class="w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-surface-container-lowest" id="radio-delivery"></div>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Livraison</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">À domicile ou bureau</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm" id="delivery-zone-box">
+<label class="block font-label-sm text-label-sm text-outline mb-space-2xs">Zone de livraison à Lomé</label>
+<div class="relative">
+<select class="w-full h-12 appearance-none bg-surface-container-lowest rounded-lg px-space-sm pr-10 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm cursor-pointer" onchange="updateDelivery(this.value)">
+<option selected="" value="1000">Adidogomé (1 000 FCFA)</option>
+<option value="500">Bè-Kpota (500 FCFA)</option>
+<option value="500">Tokoin (500 FCFA)</option>
+<option value="1500">Agoè-Nyivé (1 500 FCFA)</option>
+<option value="800">Nyékonakpoè (800 FCFA)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Coordonnées client</h3>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+        Changer
+      </button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Nom complet</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Koffi Mensah</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">phone_iphone</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Téléphone</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">+228 90 12 34 56</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">Synthèse des totaux</h3>
+<div class="flex flex-col gap-space-xs mb-space-sm font-body-md text-body-md">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Sous-total articles</span>
+<span class="font-medium text-on-surface" id="subtotal-val">2 700 FCFA</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span id="delivery-label">Frais de livraison (Adidogomé)</span>
+<span class="font-medium text-on-surface" id="delivery-val">1 000 FCFA</span>
+</div>
+</div>
+<div class="rounded-xl bg-primary/10 p-space-sm flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Total à payer</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">TTC • Règlement à la livraison</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold" id="total-val">
+        3 700 FCFA
+      </div>
+</div>
+<div class="rounded-xl bg-secondary-fixed/40 p-space-sm flex items-center gap-space-xs text-on-secondary-fixed-variant">
+<span class="text-[20px] flex-shrink-0">🎁</span>
+<p class="font-body-sm text-body-sm leading-tight">
+<span class="font-medium">Ajoutez 6 300 FCFA</span> pour débloquer la livraison <span class="font-bold underline">100% offerte</span> !
+      </p>
+</div>
+</section>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/90 backdrop-blur-xl px-margin-mobile pt-space-xs pb-safe shadow-[0_-8px_24px_rgba(0,0,0,0.06)] flex flex-col gap-space-xs max-w-md mx-auto">
+<button class="w-full h-[52px] rounded-2xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md active:scale-[0.98] transition-transform" onclick="confirmOrder()">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+      Je confirme ma commande
+    </button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="h-11 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1 active:scale-[0.98] transition-transform" onclick="history.back()">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+        Modifier
+      </button>
+<button class="h-11 rounded-xl bg-error-container text-on-error-container font-label-md text-label-md flex items-center justify-center gap-1 active:scale-[0.98] transition-transform" onclick="cancelOrder()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+        Annuler
+      </button>
+</div>
+<p class="text-center font-body-sm text-body-sm text-outline flex items-center justify-center gap-1 pb-1">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+      Annulation gratuite avant paiement
+    </p>
+</div>
+</div>
+<script>
+  let currentDeliveryCost = 1000;
+  const articlesSubtotal = 2700;
+  let isDelivery = true;
+
+  function updateDelivery(val) {
+    currentDeliveryCost = parseInt(val, 10);
+    const select = event.target;
+    const district = select.options[select.selectedIndex].text.split('(')[0].trim();
+    document.getElementById('delivery-label').textContent = 'Frais de livraison (' + district + ')';
+    renderTotals();
+  }
+
+  function selectReception(mode) {
+    const optPickup = document.getElementById('opt-pickup');
+    const optDelivery = document.getElementById('opt-delivery');
+    const zoneBox = document.getElementById('delivery-zone-box');
+    const deliveryLabel = document.getElementById('delivery-label');
+    const radioPickup = document.getElementById('radio-pickup');
+    const radioDelivery = document.getElementById('radio-delivery');
+
+    if (mode === 'pickup') {
+      isDelivery = false;
+      optPickup.className = "cursor-pointer rounded-xl p-space-sm bg-primary/10 shadow-sm flex flex-col justify-between transition-all duration-200";
+      optDelivery.className = "cursor-pointer rounded-xl p-space-sm bg-surface-container-low flex flex-col justify-between transition-all duration-200";
+      radioPickup.className = "w-2 h-2 rounded-full bg-surface-container-lowest";
+      radioPickup.parentElement.className = "w-4 h-4 rounded-full bg-primary flex items-center justify-center";
+      radioDelivery.className = "w-2 h-2 rounded-full hidden";
+      radioDelivery.parentElement.className = "w-4 h-4 rounded-full bg-surface-container flex items-center justify-center";
+      zoneBox.classList.add('hidden');
+      deliveryLabel.textContent = 'Retrait au restaurant';
+    } else {
+      isDelivery = true;
+      optDelivery.className = "cursor-pointer rounded-xl p-space-sm bg-primary/10 shadow-sm flex flex-col justify-between transition-all duration-200";
+      optPickup.className = "cursor-pointer rounded-xl p-space-sm bg-surface-container-low flex flex-col justify-between transition-all duration-200";
+      radioDelivery.className = "w-2 h-2 rounded-full bg-surface-container-lowest";
+      radioDelivery.parentElement.className = "w-4 h-4 rounded-full bg-primary flex items-center justify-center";
+      radioPickup.className = "w-2 h-2 rounded-full hidden";
+      radioPickup.parentElement.className = "w-4 h-4 rounded-full bg-surface-container flex items-center justify-center";
+      zoneBox.classList.remove('hidden');
+      deliveryLabel.textContent = 'Frais de livraison (Adidogomé)';
+    }
+    renderTotals();
+  }
+
+  function renderTotals() {
+    const fee = isDelivery ? currentDeliveryCost : 0;
+    const total = articlesSubtotal + fee;
+    document.getElementById('delivery-val').textContent = fee > 0 ? fee.toLocaleString('fr-FR') + ' FCFA' : 'Gratuit';
+    document.getElementById('total-val').textContent = total.toLocaleString('fr-FR') + ' FCFA';
+  }
+
+  function confirmOrder() {
+    alert('Commande validée avec succès pour Koffi Mensah ! Préparation en cours.');
+  }
+
+  function cancelOrder() {
+    if (confirm('Voulez-vous vraiment annuler votre commande en cours ?')) {
+      history.back();
+    }
+  }
+</script></main></body></html>

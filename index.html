@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Commerce — Hub de Navigation & Démonstration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090b10;
+      --bg-card: rgba(18, 22, 34, 0.75);
+      --bg-card-hover: rgba(26, 32, 50, 0.95);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(254, 95, 65, 0.25);
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+      --coral: #FE5F41;
+      --coral-glow: rgba(254, 95, 65, 0.4);
+      --green: #10b981;
+      --green-glow: rgba(16, 185, 129, 0.3);
+      --emerald: #059669;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+      --amber: #f59e0b;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(254, 95, 65, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      line-height: 1.5;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      background: rgba(9, 11, 16, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--coral), #e04424);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 8px 20px var(--coral-glow);
+    }
+
+    .logo-text h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .status-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .status-pill:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    .dot.warn {
+      background: var(--amber);
+      box-shadow: 0 0 10px var(--amber);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    main {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 36px 24px 60px;
+    }
+
+    /* BANNIERE RESUME */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(254, 95, 65, 0.12) 0%, rgba(16, 185, 129, 0.08) 100%);
+      border: 1px solid rgba(254, 95, 65, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-banner::after {
+      content: "🛍️";
+      position: absolute;
+      right: 20px;
+      bottom: -15px;
+      font-size: 140px;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(254, 95, 65, 0.2);
+      color: #ff9178;
+      border: 1px solid rgba(254, 95, 65, 0.35);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-banner h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero-banner p {
+      color: #cbd5e1;
+      font-size: 15px;
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .stat-val {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stat-val.green { color: #34d399; }
+    .stat-val.coral { color: #fb923c; }
+    .stat-val.blue { color: #60a5fa; }
+
+    /* SECTIONS */
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title span.badge {
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 10px;
+      border-radius: 9999px;
+      color: var(--text-muted);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .card.primary-border:hover {
+      border-color: var(--coral);
+      box-shadow: 0 12px 30px var(--coral-glow);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .card-icon.coral-bg { background: rgba(254, 95, 65, 0.15); border-color: rgba(254, 95, 65, 0.3); }
+    .card-icon.green-bg { background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
+    .card-icon.blue-bg { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); }
+    .card-icon.purple-bg { background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3); }
+
+    .card-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+    }
+
+    .card-tag.live { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .card-tag.mockup { background: rgba(254, 95, 65, 0.2); color: #fb923c; }
+    .card-tag.api { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+
+    .card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .card-url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #93c5fd;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      word-break: break-all;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .card:hover .card-btn {
+      background: var(--coral);
+      border-color: var(--coral);
+      box-shadow: 0 4px 15px var(--coral-glow);
+    }
+
+    /* MOCKUP CARDS WITH THUMBNAILS */
+    .mockup-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .mockup-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--coral);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .mockup-img-wrap {
+      height: 160px;
+      overflow: hidden;
+      position: relative;
+      background: #0f131d;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mockup-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+    }
+
+    .mockup-card:hover .mockup-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .mockup-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(9, 11, 16, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fb923c;
+      border: 1px solid rgba(254, 95, 65, 0.3);
+    }
+
+    .mockup-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .mockup-body h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .mockup-body p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    /* CREDENTIALS BOX */
+    .creds-panel {
+      background: rgba(18, 22, 34, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-top: 40px;
+      backdrop-filter: blur(12px);
+    }
+
+    .creds-panel h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .cred-item {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .cred-role {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--coral);
+      margin-bottom: 6px;
+    }
+
+    .cred-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      margin-top: 4px;
+      color: #e2e8f0;
+    }
+
+    .copy-badge {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      border: none;
+      color: #cbd5e1;
+      transition: background 0.2s;
+    }
+
+    .copy-badge:hover {
+      background: var(--coral);
+      color: #fff;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="logo-icon">🛍️</div>
+        <div class="logo-text">
+          <h1>Master Commerce — Project Hub</h1>
+          <p>SaaS e-commerce WhatsApp multi-boutiques & Plateforme</p>
+        </div>
+      </div>
+
+      <div class="status-pills">
+        <a href="http://localhost:3000/kubafoodies" target="_blank" class="status-pill" id="next-status">
+          <span class="dot"></span>
+          <span>Frontend Next.js (:3000)</span>
+        </a>
+        <a href="http://localhost:8000/docs" target="_blank" class="status-pill" id="api-status">
+          <span class="dot"></span>
+          <span>Backend FastAPI (:8000)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO BANNER / RESUME -->
+    <div class="hero-banner">
+      <div class="hero-badge">📊 BILAN D'ANALYSE DU PROJET</div>
+      <h2>Où en sommes-nous avec Master Commerce ?</h2>
+      <p>
+        Le projet est <strong>pleinement opérationnel et unifié sur la boutique officielle « Kubafoodies »</strong> : le backend FastAPI avec base SQLite/PostgreSQL gère l'authentification JWT, l'isolation multi-boutiques stricte, le CRUD produits/stocks, le recalcul serveur du total, le module FedaPay et la machine d'état des commandes. Le frontend Next.js 14 permet le parcours d'achat complet (vitrine <code>/kubafoodies</code>, panier scopé, checkout, ticket WhatsApp & FedaPay) ainsi que l'administration complète marchand (avec QR Code natif téléchargeable) et le panneau propriétaire de la plateforme.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-label">Tests Automatisés Backend</div>
+          <div class="stat-val green">15 / 15 Réussis (100%)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Boutique Officielle Active</div>
+          <div class="stat-val coral">Kubafoodies (/kubafoodies)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Zones de Livraison</div>
+          <div class="stat-val blue">Lomé & Environs (6 Zones)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Déploiement Render</div>
+          <div class="stat-val green">Prêt (render.yaml configuré)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 1 : APPLICATION LIVE (FRONTEND NEXT.JS) -->
+    <div class="section-title">
+      <span>🚀 Application Live (Next.js 14 + FastAPI)</span>
+      <span class="badge">Serveurs Actifs</span>
+    </div>
+
+    <div class="grid-cards">
+      <!-- 01 Vitrine Kubafoodies (Inspirée des affiches réelles) -->
+      <a href="http://localhost:3000/kubafoodies" target="_blank" class="card primary-border" style="border-color: var(--coral); box-shadow: 0 8px 24px var(--coral-glow);">
+        <div>
+          <div class="card-top">
+            <div class="card-icon coral-bg">🥘</div>
+            <span class="card-tag live" style="background: rgba(254, 95, 65, 0.2); color: #ff9178;">Boutique Officielle</span>
+          </div>
+          <h3>Vitrine : Kubafoodies — Service Traiteur</h3>
+          <p>Boutique officielle créée à partir des affiches réelles de Lomé : Tchiep Bou Dien au Poisson (2 500 F), Pinon avec Adokougbin (1 000 F), livraison par quartier.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/kubafoodies</div>
+          <span class="card-btn" style="background: var(--coral); border-color: var(--coral);">Ouvrir la vitrine Kubafoodies ↗</span>
+        </div>
+      </a>
+
+      <!-- 02 Panier Kubafoodies -->
+      <a href="http://localhost:3000/kubafoodies/cart" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon coral-bg">🛒</div>
+            <span class="card-tag live">Client</span>
+          </div>
+          <h3>Panier & Récapitulatif (Kubafoodies)</h3>
+          <p>Page panier complète étanche avec steppers de quantité (+ / −), calcul dynamique et récapitulatif clair.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/kubafoodies/cart</div>
+          <span class="card-btn">Voir le panier ↗</span>
+        </div>
+      </a>
+
+      <!-- 03 Checkout Kubafoodies -->
+      <a href="http://localhost:3000/kubafoodies/checkout" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon green-bg">💳</div>
+            <span class="card-tag live">Client</span>
+          </div>
+          <h3>Tunnel de Checkout & Paiement</h3>
+          <p>Choix retrait / livraison par zone (Lomé), paiement à la livraison (COD) ou FedaPay Sandbox, ticket WhatsApp.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/kubafoodies/checkout</div>
+          <span class="card-btn">Accéder au checkout ↗</span>
+        </div>
+      </a>
+
+      <!-- 04 Espace Marchand Login -->
+      <a href="http://localhost:3000/admin/login" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon purple-bg">🔐</div>
+            <span class="card-tag live">Marchand</span>
+          </div>
+          <h3>Connexion Espace Marchand</h3>
+          <p>Authentification JWT sécurisée pour accéder au panneau d'administration de Kubafoodies.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/login</div>
+          <span class="card-btn">Se connecter ↗</span>
+        </div>
+      </a>
+
+      <!-- 05 Mes Boutiques -->
+      <a href="http://localhost:3000/admin" target="_blank" class="card primary-border">
+        <div>
+          <div class="card-top">
+            <div class="card-icon purple-bg">🏬</div>
+            <span class="card-tag live">Marchand</span>
+          </div>
+          <h3>Mes Boutiques (Admin)</h3>
+          <p>Liste de vos boutiques (Kubafoodies), statut en ligne/hors ligne, accès direct aux sous-modules.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin</div>
+          <span class="card-btn">Gérer mes boutiques ↗</span>
+        </div>
+      </a>
+
+      <!-- 06 Dashboard Marchand -->
+      <a href="http://localhost:3000/admin/shops/1" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon green-bg">📊</div>
+            <span class="card-tag live">Marchand</span>
+          </div>
+          <h3>Tableau de Bord « Kubafoodies »</h3>
+          <p>KPIs temps réel : CA encaissé, commandes à préparer en cuisine, top produits et alertes de stock critique.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/shops/1</div>
+          <span class="card-btn">Voir le tableau de bord ↗</span>
+        </div>
+      </a>
+
+      <!-- 07 Gestion Menu & Stocks -->
+      <a href="http://localhost:3000/admin/shops/1/produits" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon coral-bg">📦</div>
+            <span class="card-tag live">Marchand</span>
+          </div>
+          <h3>Menu & Stocks Kubafoodies</h3>
+          <p>Ajout de plats avec upload photos, réglage prix promos, toggles de disponibilité et réapprovisionnement.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/shops/1/produits</div>
+          <span class="card-btn">Gérer le menu ↗</span>
+        </div>
+      </a>
+
+      <!-- 08 Commandes & Cuisine -->
+      <a href="http://localhost:3000/admin/shops/1/orders" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon green-bg">🥘</div>
+            <span class="card-tag live">Marchand</span>
+          </div>
+          <h3>Gestion des Commandes</h3>
+          <p>Suivi des tickets en attente, confirmation (décrémente le stock), expédition/livraison et statut paiement.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/shops/1/orders</div>
+          <span class="card-btn">Traiter les commandes ↗</span>
+        </div>
+      </a>
+
+      <!-- 09 Publications WhatsApp -->
+      <a href="http://localhost:3000/admin/shops/1/publications" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon blue-bg">📣</div>
+            <span class="card-tag live">Marketing</span>
+          </div>
+          <h3>Générateur de Posts Sociaux</h3>
+          <p>Génération automatique de textes percutants prêts à copier-coller pour vos statuts WhatsApp & Facebook.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/shops/1/publications</div>
+          <span class="card-btn">Créer des posts ↗</span>
+        </div>
+      </a>
+
+      <!-- 10 Réglages & QR Code -->
+      <a href="http://localhost:3000/admin/shops/1/settings" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon purple-bg">⚙️</div>
+            <span class="card-tag live">Marchand</span>
+          </div>
+          <h3>Réglages & QR Code (Natif & Téléchargeable)</h3>
+          <p>Nom, numéro WhatsApp, description et QR Code officiel instantanément généré en local (téléchargement PNG).</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/shops/1/settings</div>
+          <span class="card-btn">Ouvrir les réglages & QR Code ↗</span>
+        </div>
+      </a>
+
+      <!-- 11 Plateforme Owner -->
+      <a href="http://localhost:3000/admin/plateforme" target="_blank" class="card primary-border">
+        <div>
+          <div class="card-top">
+            <div class="card-icon blue-bg">🛡️</div>
+            <span class="card-tag live">Propriétaire</span>
+          </div>
+          <h3>Plateforme Master Commerce (Owner)</h3>
+          <p>Vision macro du réseau : KPIs globaux, commissions perçues, frais de setup et création de boutiques à façon.</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:3000/admin/plateforme</div>
+          <span class="card-btn">Accéder à la plateforme ↗</span>
+        </div>
+      </a>
+
+      <!-- 12 Documentation Swagger -->
+      <a href="http://localhost:8000/docs" target="_blank" class="card">
+        <div>
+          <div class="card-top">
+            <div class="card-icon blue-bg">📖</div>
+            <span class="card-tag api">API REST</span>
+          </div>
+          <h3>Documentation Interactive Swagger</h3>
+          <p>Explorez et testez directement les 25+ endpoints REST FastAPI (Auth, Shops, Products, Orders, Platform).</p>
+        </div>
+        <div>
+          <div class="card-url">http://localhost:8000/docs</div>
+          <span class="card-btn">Explorer Swagger ↗</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- SECTION 2 : TABLEAU DE NAVIGATION RAPIDE -->
+    <div class="section-title">
+      <span>🗺️ Toutes les Fenêtres — Accès Rapide &amp; Vérification</span>
+      <span class="badge">15 Fenêtres Live</span>
+    </div>
+
+    <!-- Bannière identifiants de test -->
+    <div style="background: rgba(254, 95, 65, 0.08); border: 1px solid rgba(254, 95, 65, 0.25); border-radius: 16px; padding: 18px 24px; margin-bottom: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 24px;">🔑</span>
+        <div>
+          <h4 style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #fff;">Identifiants de test pré-configurés</h4>
+          <p style="font-size: 12px; color: var(--text-muted);">Utilisez ces comptes pour tester instantanément les espaces Marchand et Propriétaire.</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); padding: 8px 14px; border-radius: 10px; font-size: 12px;">
+          <span style="color: #c084fc; font-weight: 700;">Marchand :</span>
+          <code style="color: #93c5fd; margin-left: 6px;">demo@mastercommerce.app</code> / <code style="color: #cbd5e1;">demo123456</code>
+        </div>
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); padding: 8px 14px; border-radius: 10px; font-size: 12px;">
+          <span style="color: #60a5fa; font-weight: 700;">Propriétaire :</span>
+          <code style="color: #93c5fd; margin-left: 6px;">owner@mastercommerce.app</code> / <code style="color: #cbd5e1;">owner-mc-admin123</code>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: rgba(18,22,34,0.75); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; margin-bottom: 40px; backdrop-filter: blur(12px);">
+      <!-- Header du tableau -->
+      <div style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); background: rgba(0,0,0,0.2);">
+        <span>Fenêtre</span><span>Rôle</span><span>URL</span><span>Action</span>
+      </div>
+
+      <!-- Lignes — CLIENT -->
+      <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 11px; font-weight: 800; text-transform: uppercase; color: #fb923c; letter-spacing: 0.6px; background: rgba(254,95,65,0.03);">
+        👤 ESPACE CLIENT (Storefront &amp; Commande)
+      </div>
+
+      <a href="http://localhost:3000/kubafoodies" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">🥘 Vitrine Kubafoodies (Catalogue Principal)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(16,185,129,0.15); color: #34d399; width: fit-content; font-weight: 600;">Client</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/kubafoodies</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/kubafoodies/cart" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">🛒 Panier &amp; Récapitulatif</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(16,185,129,0.15); color: #34d399; width: fit-content; font-weight: 600;">Client</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/kubafoodies/cart</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/kubafoodies/checkout" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">💳 Tunnel Checkout (Validation WhatsApp &amp; FedaPay)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(16,185,129,0.15); color: #34d399; width: fit-content; font-weight: 600;">Client</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/kubafoodies/checkout</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/kubafoodies/commandes" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">📋 Suivi de Commande &amp; Recherche Ref</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(16,185,129,0.15); color: #34d399; width: fit-content; font-weight: 600;">Client</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/kubafoodies/commandes</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <!-- Lignes — MARCHAND -->
+      <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 11px; font-weight: 800; text-transform: uppercase; color: #c084fc; letter-spacing: 0.6px; background: rgba(139,92,246,0.03); margin-top: 4px;">
+        🏬 ESPACE MARCHAND (Administration Restaurant)
+      </div>
+
+      <a href="http://localhost:3000/admin/login" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">🔐 Connexion Marchand (Split-screen Rouge)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/login</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin/register" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">✨ Inscription Marchand (Nouveau Design)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/register</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">🏬 Mes Boutiques (Hub Multi-Enseignes)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin/shops/1" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">📊 Tableau de Bord (Kubafoodies)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/shops/1</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin/shops/1/produits" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">📦 Menu, Plats &amp; Stocks (Kubafoodies)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/shops/1/produits</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin/shops/1/orders" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">🥘 Cuisine &amp; Commandes en Direct</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/shops/1/orders</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin/shops/1/publications" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">📣 Publications WhatsApp &amp; Réseaux</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marketing</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/shops/1/publications</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:3000/admin/shops/1/settings" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">⚙️ Réglages Boutique &amp; QR Code (Kubafoodies)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(139,92,246,0.15); color: #c084fc; width: fit-content; font-weight: 600;">Marchand</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/shops/1/settings</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <!-- Lignes — PROPRIETAIRE -->
+      <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 11px; font-weight: 800; text-transform: uppercase; color: #60a5fa; letter-spacing: 0.6px; background: rgba(59,130,246,0.03); margin-top: 4px;">
+        🛡️ ESPACE PROPRIÉTAIRE (SuperAdmin Plateforme) &amp; API
+      </div>
+
+      <a href="http://localhost:3000/admin/plateforme" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">🛡️ Panneau Plateforme (SuperAdmin Owner)</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(59,130,246,0.15); color: #60a5fa; width: fit-content; font-weight: 600;">Propriétaire</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">/admin/plateforme</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+
+      <a href="http://localhost:8000/docs" target="_blank" style="display: grid; grid-template-columns: 2.2fr 1fr 2.8fr 1.2fr; padding: 14px 24px; text-decoration: none; color: inherit; transition: background 0.2s; align-items: center;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+        <span style="font-weight: 600; font-size: 14px;">📖 Documentation Interactive API Swagger</span>
+        <span style="font-size: 12px; padding: 3px 10px; border-radius: 9999px; background: rgba(59,130,246,0.15); color: #60a5fa; width: fit-content; font-weight: 600;">API REST</span>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #93c5fd;">localhost:8000/docs</code>
+        <span style="font-size: 12px; color: var(--coral); font-weight: 700;">Ouvrir ↗</span>
+      </a>
+    </div>
+
+    <!-- SECTION 3 : MAQUETTES HAUTE FIDÉLITÉ STITCH -->
+    <div class="section-title">
+      <span>🎨 Maquettes &amp; Prototypes HTML Haute-Fidélité (Stitch)</span>
+      <span class="badge">9 Écrans Interactifs</span>
+    </div>
+
+    <div class="grid-cards" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+      
+      <!-- Stitch 1 : Catalogue Public -->
+      <a href="stitch_master_commerce_food_catalog/catalogue_public_ai_business/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/catalogue_public_ai_business/screen.png" alt="Catalogue Public AI Business">
+          <span class="mockup-badge">Écran 01</span>
+        </div>
+        <div class="mockup-body">
+          <h4>01 · Catalogue Public (AI Business)</h4>
+          <p>Design modernisé de la vitrine avec hero XL, dégradés chaleureux et badges d'avis clients.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 2 : Panier -->
+      <a href="stitch_master_commerce_food_catalog/panier_master_commerce/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/panier_master_commerce/screen.png" alt="Panier Master Commerce">
+          <span class="mockup-badge">Écran 02</span>
+        </div>
+        <div class="mockup-body">
+          <h4>02 · Panier Client Interactif</h4>
+          <p>Tiroir latéral et vue dédiée avec steppers tactiles et calcul du panier.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 3 : Récapitulatif Minutieux -->
+      <a href="stitch_master_commerce_food_catalog/r_capitulatif_minutieux_ai_business/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/r_capitulatif_minutieux_ai_business/screen.png" alt="Récapitulatif Minutieux">
+          <span class="mockup-badge">Écran 03</span>
+        </div>
+        <div class="mockup-body">
+          <h4>03 · Récapitulatif Checkout</h4>
+          <p>Vue détaillée avec sélection zone de livraison, adresse et options de commande.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 4 : Ticket de Commande -->
+      <a href="stitch_master_commerce_food_catalog/ticket_de_commande_ai_business/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/ticket_de_commande_ai_business/screen.png" alt="Ticket de Commande">
+          <span class="mockup-badge">Écran 04</span>
+        </div>
+        <div class="mockup-body">
+          <h4>04 · Ticket de Commande Reçu</h4>
+          <p>Facture thermique digitale stylisée avec référence unique et bouton WhatsApp.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 5 : Succès Commande -->
+      <a href="stitch_master_commerce_food_catalog/succ_s_commande_ai_business/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/succ_s_commande_ai_business/screen.png" alt="Succès Commande">
+          <span class="mockup-badge">Écran 05</span>
+        </div>
+        <div class="mockup-body">
+          <h4>05 · Confirmation & Succès</h4>
+          <p>Écran de célébration d'enregistrement avec instructions de livraison.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 6 : Dashboard Marchand -->
+      <a href="stitch_master_commerce_food_catalog/tableau_de_bord_marchand_master_commerce/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/tableau_de_bord_marchand_master_commerce/screen.png" alt="Tableau de Bord Marchand">
+          <span class="mockup-badge">Écran 06</span>
+        </div>
+        <div class="mockup-body">
+          <h4>06 · Dashboard Marchand Restauration</h4>
+          <p>Vue cuisine, alertes commandes urgentes, indicateurs CA et commandes en cours.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 7 : Gestion Stocks -->
+      <a href="stitch_master_commerce_food_catalog/gestion_produits_stocks_master_commerce/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/gestion_produits_stocks_master_commerce/screen.png" alt="Gestion Produits Stocks">
+          <span class="mockup-badge">Écran 07</span>
+        </div>
+        <div class="mockup-body">
+          <h4>07 · Gestion Produits & Stocks</h4>
+          <p>Tableau interactif des stocks, alertes ruptures et modale de nouveau plat.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 8 : Paiement FedaPay -->
+      <a href="stitch_master_commerce_food_catalog/paiement_fedapay_ai_business/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/paiement_fedapay_ai_business/screen.png" alt="Paiement FedaPay">
+          <span class="mockup-badge">Écran 08 (Phase 2)</span>
+        </div>
+        <div class="mockup-body">
+          <h4>08 · Paiement Mobile FedaPay</h4>
+          <p>Maquette d'intégration future du paiement en ligne Mobile Money (T-Money, Moov).</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+      <!-- Stitch 9 : Saveurs d'Aho -->
+      <a href="stitch_master_commerce_food_catalog/saveurs_d_aho/code.html" target="_blank" class="mockup-card">
+        <div class="mockup-img-wrap">
+          <img src="stitch_master_commerce_food_catalog/saveurs_d_aho/screen.png" alt="Saveurs d'Aho">
+          <span class="mockup-badge">Écran 09</span>
+        </div>
+        <div class="mockup-body">
+          <h4>09 · Saveurs d'Aho (Variante Design)</h4>
+          <p>Prototype de vitrine alternative pour enseigne gastronomique africaine.</p>
+          <span class="card-btn">Ouvrir la maquette ↗</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- SECTION 3 : PREVIEW DESIGN PROTOTYPE -->
+    <div class="section-title">
+      <span>✨ Preview Design Standalone</span>
+      <span class="badge">Prototype UI</span>
+    </div>
+
+    <div class="grid-cards" style="grid-template-columns: 1fr;">
+      <a href="preview-design/index.html" target="_blank" class="card primary-border" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <div style="max-width: 700px;">
+          <div class="card-top" style="margin-bottom: 8px;">
+            <div class="card-icon coral-bg">🎨</div>
+            <span class="card-tag mockup">Design System Prototype</span>
+          </div>
+          <h3>Preview Design Master Commerce (Dark/Light)</h3>
+          <p style="margin-bottom: 0;">Prototype autonome explorant la typographie Outfit, les cartes produits arrondies avec hover dynamiques et le toggle de thème sombre / clair.</p>
+        </div>
+        <div>
+          <span class="card-btn" style="width: auto; padding: 12px 24px; margin-top: 0;">Ouvrir la Preview Design ↗</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- IDENTIFIANTS DE TEST -->
+    <div class="creds-panel">
+      <h3>🔑 Comptes & Identifiants Préconfigurés (Pour Tester)</h3>
+      <div class="creds-grid">
+        <div class="cred-item">
+          <div class="cred-role">👨‍🍳 Compte Marchand Démo</div>
+          <div class="cred-line">
+            <span>Email :</span>
+            <strong>demo@mastercommerce.app</strong>
+          </div>
+          <div class="cred-line">
+            <span>Mot de passe :</span>
+            <strong>demo123456</strong>
+          </div>
+        </div>
+
+        <div class="cred-item">
+          <div class="cred-role">🛡️ Compte Propriétaire (Owner)</div>
+          <div class="cred-line">
+            <span>Email :</span>
+            <strong>owner@mastercommerce.app</strong>
+          </div>
+          <div class="cred-line">
+            <span>Mot de passe :</span>
+            <strong>owner-mc-admin123</strong>
+          </div>
+        </div>
+
+        <div class="cred-item">
+          <div class="cred-role">⚡ Inscription Instantanée</div>
+          <div class="cred-line">
+            <span>Lien :</span>
+            <a href="http://localhost:3000/admin/register" target="_blank" style="color: #60a5fa; text-decoration: none;">Créer un compte</a>
+          </div>
+          <div class="cred-line" style="font-size: 11.5px; color: var(--text-muted); margin-top: 6px;">
+            Connexion automatique après inscription.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Master Commerce © 2026 · SaaS e-commerce WhatsApp multi-boutiques pour l'Afrique de l'Ouest</p>
+  </footer>
+
+</body>
+</html>

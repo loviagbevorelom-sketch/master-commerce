@@ -1,0 +1,25 @@
+# Assets vectoriels — Licences
+
+Tous les fichiers ont été téléchargés depuis des sources libres et peuvent être
+utilisés dans le site.
+
+## assets/vector/food/*.svg  (28 fichiers)
+Source : **Twemoji** (Twitter Emoji) — v15.1.0
+URL de base : https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/
+Licence : **CC-BY 4.0** (https://creativecommons.org/licenses/by/4.0/)
+Attribution requise : "Emoji by Twitter / Twemoji (CC-BY 4.0)".
+Bibliothèque : Twitter (X) — https://twemoji.twitter.com/
+
+## assets/vector/logos/*.svg  (2 fichiers)
+Source : **Simple Icons**
+URL de base : https://cdn.simpleicons.org/
+Licence : **CC0 1.0** (domaine public) — pas d'attribution requise.
+Bibliothèque : https://simpleicons.org/
+
+## Intégration
+Placez les fichiers dans frontend/public/ au moment de la phase design
+(ex. frontend/public/assets/food/). Les SVG Twemoji sont des dessins d'emoji
+: à utiliser comme illustrations de plats/icônes. `logos/whatsapp.svg` peut
+remplacer le chemin SVG actuel des boutons WhatsApp (components/SiteHeader.tsx,
+OrderTicket.tsx, SiteFooter.tsx) ; `logos/facebook.svg` est utile pour la
+page Publications (statuts Facebook).

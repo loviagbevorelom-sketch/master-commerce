@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#ffdbca","on-primary-fixed":"#002109","error":"#ba1a1a","tertiary-container":"#da3437","tertiary-fixed-dim":"#ffb3ad","error-container":"#ffdad6","primary-fixed-dim":"#62df7d","on-secondary":"#ffffff","on-background":"#1d1b19","surface-container-low":"#f9f2ee","outline-variant":"#bdcaba","inverse-on-surface":"#f6efeb","surface-variant":"#e8e1dd","tertiary-fixed":"#ffdad7","surface":"#fff8f4","surface-container":"#f3ede9","on-tertiary":"#ffffff","on-error":"#ffffff","on-error-container":"#93000a","on-secondary-fixed-variant":"#783200","inverse-primary":"#62df7d","surface-container-lowest":"#ffffff","on-primary":"#ffffff","background":"#fff8f4","secondary":"#9d4300","primary-container":"#00873a","on-secondary-container":"#5c2400","on-surface-variant":"#3e4a3d","surface-tint":"#006e2d","on-tertiary-fixed":"#410004","surface-dim":"#dfd9d5","surface-bright":"#fff8f4","primary":"#006b2c","primary-fixed":"#7ffc97","outline":"#6e7b6c","on-primary-fixed-variant":"#005320","on-primary-container":"#f7fff2","on-tertiary-container":"#fffbff","on-tertiary-fixed-variant":"#930013","inverse-surface":"#33302d","surface-container-highest":"#e8e1dd","surface-container-high":"#ede7e3","on-secondary-fixed":"#341100","secondary-container":"#fd761a","on-surface":"#1d1b19","secondary-fixed-dim":"#ffb690","tertiary":"#b61722"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"0.75rem","space-lg":"1.25rem","margin-desktop":"2rem","space-md":"1rem","space-2xl":"2rem","space-xs":"0.5rem","space-3xl":"2.5rem","margin-mobile":"1rem","space-2xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem","space-sm":"0.75rem"},"fontFamily":{"body-md":["Outfit"],"headline-sm":["Outfit"],"display-lg-mobile":["Outfit"],"price-tag":["Outfit"],"body-sm":["Outfit"],"label-sm":["Outfit"],"label-md":["Outfit"],"display-lg":["Outfit"],"headline-lg":["Outfit"],"headline-md":["Outfit"],"body-lg":["Outfit"],"label-lg":["Outfit"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.025em","fontWeight":"700"}],"price-tag":["18px",{"lineHeight":"22px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.015em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"label-lg":["15px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-xl px-space-md"><div class="flex flex-col gap-space-2xl"><div class="flex items-center gap-space-sm px-space-sm"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md font-bold shadow-[0_8px_24px_-8px_rgba(0,0,0,0.08)]">Ai</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none">Ai Business</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-space-2xs">Lomé Commerce</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-[0_8px_24px_-8px_rgba(0,0,0,0.08)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tableau-de-bord" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span>Tableau de bord</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="commandes" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span>Commandes</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="produits-menu" href="#"><span class="material-symbols-outlined text-[22px]">restaurant_menu</span>Produits &amp; Menu</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="clients" href="#"><span class="material-symbols-outlined text-[22px]">group</span>Clients</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="parametres" href="#"><span class="material-symbols-outlined text-[22px]">settings</span>Paramètres</a></nav></div><div class="bg-surface-container rounded-xl p-space-md flex items-center justify-between shadow-[0_8px_24px_-8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Plateforme Lomé</span><span class="font-label-md text-label-md text-primary font-bold">Master Commerce</span></div><span class="material-symbols-outlined text-primary text-[20px]">verified</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed-variant"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm">Boutique ouverte 🟢</span></div><span class="text-outline-variant">•</span><span class="font-body-sm text-body-sm text-on-surface-variant">Secteur Tokoin, Lomé</span></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span>Exporter</span></button><div class="w-px h-6 bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-tight">Koffi Mensah</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Marchand Agréé</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full px-space-xl bg-background"><div class="flex flex-col w-full pb-space-3xl gap-space-2xl">
+<!-- Top Operational Banner & Metric Insights -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg pt-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="inline-flex items-center gap-space-xs text-secondary font-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Tableau de bord Marchand Lomé
+      </div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
+        📦 Gestion du Menu &amp; des Stocks
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Contrôlez vos disponibilités en direct pour vos clients de Lomé. Mettez vos marmites à jour sans jargon technique.
+      </p>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="hidden xl:flex items-center gap-space-md bg-surface-container px-space-lg py-space-sm rounded-2xl shadow-sm">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Commandes Actives</span>
+<span class="font-headline-sm text-headline-sm text-primary">14 en cours</span>
+</div>
+<div class="w-px h-8 bg-surface-variant"></div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Marmites Fermées</span>
+<span class="font-headline-sm text-headline-sm text-secondary">2 épuisées</span>
+</div>
+</div>
+<button class="inline-flex items-center justify-center gap-space-xs px-space-xl h-[52px] rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container active:scale-[0.98] transition-all" id="btn-open-modal">
+<span class="material-symbols-outlined text-[22px]">add</span>
+<span>Nouveau produit</span>
+</button>
+</div>
+</section>
+<!-- Section 1 : Quick Config / Preparation Mode Flow -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-[28px] shadow-sm relative overflow-hidden">
+<!-- Subtle warm corner glow -->
+<div class="absolute -top-24 -right-24 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-md">1</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+          Quel est le mode de préparation de ce produit ?
+        </h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+        Configuration simplifiée
+      </span>
+</div>
+<!-- 3 Big Visual Mode Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs" id="prep-mode-selector">
+<!-- Card 1: On-demand Cooked (Active default) -->
+<label class="prep-option cursor-pointer group relative flex flex-col justify-between p-space-xl rounded-[22px] bg-surface transition-all duration-200 shadow-md">
+<input checked="" class="peer sr-only" name="prep_mode" type="radio" value="on_demand"/>
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/15 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">skillet</span>
+</div>
+<div class="radio-indicator w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<div class="flex flex-col mt-space-lg">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">Cuisine Chaude</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs flex items-center gap-space-2xs">
+            👨‍🍳 Se prépare à la commande
+          </span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+            Plats chauds, jus frais maison. Pas de limite de stock fixe : vous ouvrez ou clôturez d’un clic selon vos marmites !
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-2xs text-primary font-label-sm">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+<span>Interrupteur d'un clic en caisse</span>
+</div>
+</label>
+<!-- Card 2: Reserve Inventory -->
+<label class="prep-option cursor-pointer group relative flex flex-col justify-between p-space-xl rounded-[22px] bg-surface-container-low transition-all duration-200 hover:bg-surface hover:shadow-md">
+<input class="peer sr-only" name="prep_mode" type="radio" value="stock"/>
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">inventory_2</span>
+</div>
+<div class="radio-indicator w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<div class="flex flex-col mt-space-lg">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wide">Réserve &amp; Bocaux</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs flex items-center gap-space-2xs">
+            📦 J’ai un stock en réserve
+          </span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+            Thé, épices en boîte, sachets scellés. Décompte automatique à chaque vente en ligne ou sur place.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-2xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[16px]">pin</span>
+<span>Compteur d'unités précis</span>
+</div>
+</label>
+<!-- Card 3: Continuous / Unlimited -->
+<label class="prep-option cursor-pointer group relative flex flex-col justify-between p-space-xl rounded-[22px] bg-surface-container-low transition-all duration-200 hover:bg-surface hover:shadow-md">
+<input class="peer sr-only" name="prep_mode" type="radio" value="infinite"/>
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-2xl bg-surface-variant flex items-center justify-center text-on-surface-variant group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">all_inclusive</span>
+</div>
+<div class="radio-indicator w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<div class="flex flex-col mt-space-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Toujours Actif</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs flex items-center gap-space-2xs">
+            ∞ Pas de limite pour l’instant
+          </span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+            Disponible en continu sans gestion de stock, idéal pour les condiments d’accompagnement ou extras à volonté.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-2xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[16px]">published_with_changes</span>
+<span>Rien à ajuster manuellement</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Section 2 : Live Food & Stock Table -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-[28px] shadow-sm">
+<!-- Filter and Search Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">
+          Menu &amp; Stocks du Moment
+        </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          5 références synchronisées avec votre vitrine Lomé
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="filter-pill active px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm">
+          Tous (5)
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md">
+          Marmites chaudes
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md">
+          Stocks réserve
+        </button>
+<button class="filter-pill px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          2 Alertes
+        </button>
+</div>
+</div>
+<!-- Product Table Container -->
+<div class="w-full overflow-x-auto">
+<div class="min-w-[760px] flex flex-col gap-space-xs">
+<!-- Table Header (Non-border visual strip) -->
+<div class="grid grid-cols-12 gap-space-md px-space-lg py-space-xs text-on-surface-variant font-label-sm uppercase tracking-wider bg-surface-container-low rounded-xl">
+<div class="col-span-4">Produit &amp; Catégorie</div>
+<div class="col-span-2">Prix Lomé</div>
+<div class="col-span-4">État du Stock / Disponibilité</div>
+<div class="col-span-2 text-right">Actions</div>
+</div>
+<!-- ROW 1 : Pinon sauce adjo -->
+<div class="grid grid-cols-12 gap-space-md items-center px-space-lg py-space-md bg-surface rounded-2xl shadow-sm hover:shadow-md transition-shadow" id="product-row-1">
+<!-- Col 1: Details & Media -->
+<div class="col-span-4 flex items-center gap-space-md min-w-0">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A warm artisan bowl of authentic Beninese Pinon sauce adjo, garnished with fried seafood and spicy scotch bonnet peppers, warm West African morning sunlight casting soft shadows, food photography in a modern ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA40PTe2O3dwuKngtXr15Siq321ZAgjmT6W_Flr2kLcuOT-qitCBVzj_Ho2lZt0oV_Zf8p1fnl4PK94CIzuIJtX0mGjmB7-DIYjztDcNEw0zKNpQJ0dWI6yv3Um8hBviYuQZ98ANgdfMl8htmgatwienK-LMPfV576rsMKB4pQa15_BXdUFjCawLTSh6i3DvgfUNMvLoiTZ1vHqwIFSV57HRqTVjzIRE9QU7XFhHCAiNYUVGHvMh6Sp"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Pinon sauce adjo</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] uppercase">
+                  Promo
+                </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Cuisine / Plat du jour • Fait à la demande</span>
+</div>
+</div>
+<!-- Col 2: Price -->
+<div class="col-span-2 flex flex-col">
+<span class="font-price-tag text-price-tag text-primary">1 000 FCFA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">1 500 FCFA</span>
+</div>
+<!-- Col 3: Live Control (Toggle ON) -->
+<div class="col-span-4 flex items-center">
+<button class="pot-toggle group flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary-fixed-dim transition-all shadow-sm" onclick="togglePotStatus(this, 'Pinon sauce adjo')">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+<span class="font-label-md text-label-md state-label font-bold">Dispo — clôturer la journée</span>
+</button>
+</div>
+<!-- Col 4: Actions -->
+<div class="col-span-2 flex items-center justify-end gap-space-xs">
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Voir dans la boutique">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- ROW 2 : Tchiep poulet braisé (Exhausted / Marmite fermée) -->
+<div class="grid grid-cols-12 gap-space-md items-center px-space-lg py-space-md bg-surface-container-low rounded-2xl opacity-90 hover:opacity-100 transition-all" id="product-row-2">
+<!-- Col 1: Details -->
+<div class="col-span-4 flex items-center gap-space-md min-w-0">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="Traditional Togolese Tchiep rice served with tender grilled chicken thigh and caramelized onions, presented on rustic dark pottery in Lomé, warm natural daylight with soft steam rising." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3q8L9KJTW3Nla3i60XnBLjK0ZD6ATHGBPqNC8FUSneqDZSN_krfYJgc1COSos5QVr6V2FnH0WcnBqCruZ_kKXQ8I4DY6-JsIoqwdmYBd19pbfutbXbAPkRNPKxHjQEq_-qSZGIpfWgom4UImeainJIB7qXUUifBmW4U9bdbbo_Q60_2hNVYm5tSaAGQ7h_99vOds66JCx4Xzs8dLKm_uVfu0OyI0CjQfCuNeGLYjaoOmg7nK_Ubun"/>
+<div class="absolute inset-0 bg-on-background/40 flex items-center justify-center text-surface">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Tchiep poulet braisé</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Cuisine / Plat du jour • Marmite épuisée</span>
+</div>
+</div>
+<!-- Col 2: Price -->
+<div class="col-span-2 flex flex-col">
+<span class="font-price-tag text-price-tag text-on-surface">2 500 FCFA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standard</span>
+</div>
+<!-- Col 3: Live Control (Toggle OFF / Closed) -->
+<div class="col-span-4 flex items-center">
+<button class="pot-toggle group flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant hover:bg-secondary-fixed-dim transition-all shadow-sm" onclick="togglePotStatus(this, 'Tchiep poulet braisé')">
+<span class="material-symbols-outlined text-[20px] text-secondary">lock</span>
+<span class="font-label-md text-label-md state-label font-bold">Fini aujourd’hui — réouvrir</span>
+</button>
+</div>
+<!-- Col 4: Actions -->
+<div class="col-span-2 flex items-center justify-end gap-space-xs">
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Voir dans la boutique">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- ROW 3 : Thé vert en sachets (Critical Stock Stepper) -->
+<div class="grid grid-cols-12 gap-space-md items-center px-space-lg py-space-md bg-surface rounded-2xl shadow-sm hover:shadow-md transition-shadow" id="product-row-3">
+<!-- Col 1: Details -->
+<div class="col-span-4 flex items-center gap-space-md min-w-0">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artisanal loose leaf green tea sachets tied with natural twine next to small dried herbal ingredients, placed on clean light cream wooden texture, crisp warm ambient studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArUwxXWkiGvONARG0iNrArUEmI8_Zs-sNLz2_tEVS07eG6gFxa6ioNoZ8c-CR_MVTceiNtGtnHX30JRk9Dbn6-nSqH1dOH8m8MYi6_mDYmf_nyumABXchhsCTe_7gGqkJxmza6YEsBoV4d5liUkgfIe3mPSgPGMc0_RP1J3OLl8IC37ugQ4TsR1TjkIBxh2WVId4f3tBdobgYpcMFH4sxMdr7JK__KXaZlCf0kfheej-iuNcNGMGbe"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Thé vert en sachets</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Stock en réserve • Boîte de 20 sachets</span>
+</div>
+</div>
+<!-- Col 2: Price -->
+<div class="col-span-2 flex flex-col">
+<span class="font-price-tag text-price-tag text-on-surface">1 800 FCFA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">L’unité</span>
+</div>
+<!-- Col 3: Stepper Control + Critical Alert -->
+<div class="col-span-4 flex items-center gap-space-md flex-wrap">
+<div class="inline-flex items-center bg-surface-container rounded-full p-1 shadow-inner">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-variant flex items-center justify-center transition-transform active:scale-95" onclick="changeStock('tea-count', -1)">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-10 text-center font-headline-sm text-headline-sm text-on-surface" id="tea-count">3</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-variant flex items-center justify-center transition-transform active:scale-95" onclick="changeStock('tea-count', 1)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<!-- Animated warning indicator -->
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm animate-pulse">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Stock critique (≤ 5)</span>
+</div>
+</div>
+<!-- Col 4: Actions -->
+<div class="col-span-2 flex items-center justify-end gap-space-xs">
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Voir dans la boutique">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- ROW 4 : Jus de bissap 1L (Out of Stock + Quick Replenish) -->
+<div class="grid grid-cols-12 gap-space-md items-center px-space-lg py-space-md bg-surface-container-low rounded-2xl hover:bg-surface transition-colors" id="product-row-4">
+<!-- Col 1: Details -->
+<div class="col-span-4 flex items-center gap-space-md min-w-0">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="Chilled glass bottles of rich crimson African hibiscus bissap juice garnished with fresh mint leaves and subtle condensation droplets, high angle view in warm tropical ambient setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL2SYtpm9qPWNadweR_eqc5cFq443qxURnIoD2dufoIs0Yucc3b2X5vFtb-_FR97dFjmQPWucZ8yV1vTVsgoxlO8QNgJGFY5G0DYjUnCH33wd3PvJztHvWf_TW4Mb7RvjyyMIOyRp-8TPvzvaSJXxMVUO2lv07rVVqCxY0uVtmCb-IQy-rbQbz1VmhpT1VoazjUoWZGUqAXDXkcaWyzDKJjgocJsNTyaQjX0bERJbfQ3Fk6pYFtgJM"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Jus de bissap 1L</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Stock en réserve • Bouteilles verre</span>
+</div>
+</div>
+<!-- Col 2: Price -->
+<div class="col-span-2 flex flex-col">
+<span class="font-price-tag text-price-tag text-on-surface">1 200 FCFA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bouteille</span>
+</div>
+<!-- Col 3: Out of stock pill + Quick Add 10 -->
+<div class="col-span-4 flex items-center gap-space-sm flex-wrap">
+<div class="inline-flex items-center bg-surface-container rounded-full p-1 opacity-70">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-outline flex items-center justify-center cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-10 text-center font-headline-sm text-headline-sm text-error" id="bissap-count">0</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-variant flex items-center justify-center transition-transform active:scale-95" onclick="changeStock('bissap-count', 1)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<span class="px-space-sm py-space-2xs rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-bold">
+              Épuisé
+            </span>
+<button class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-all active:scale-95 shadow-sm" onclick="replenishBissap(10)">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+<span>+10 bouteilles</span>
+</button>
+</div>
+<!-- Col 4: Actions -->
+<div class="col-span-2 flex items-center justify-end gap-space-xs">
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Voir dans la boutique">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- ROW 5 : Alloco piment (Ready / Dispo) -->
+<div class="grid grid-cols-12 gap-space-md items-center px-space-lg py-space-md bg-surface rounded-2xl shadow-sm hover:shadow-md transition-shadow" id="product-row-5">
+<!-- Col 1: Details -->
+<div class="col-span-4 flex items-center gap-space-md min-w-0">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Golden fried ripe alloco plantain cubes served with spicy red pepper sauce and roasted onions on an authentic African banana leaf platter, warm editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzVCY7v12YbXBSrl4cQw-uHWiORQvFk5BSsrZzLYy9z-0kZDySWay15KzI6Es8rqnxHa9hk8T8mSkzR0pStkpQ7gNhFnsj8B0cQ0L20ls_CtVzhd1DCVdzLWHQrq_NLMXa7gx3ng6irxWolJDQzThJjhMPLPmUhdWZP96s6_3s2YsPXYKStejxBYC4hf1SvTH6IZal2WxGKZdIr0VYfwn8aRJljsxGEi-UKAUuk3d_htaa8E7hsNbl"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Alloco piment</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Cuisine / Accompagnement • À la minute</span>
+</div>
+</div>
+<!-- Col 2: Price -->
+<div class="col-span-2 flex flex-col">
+<span class="font-price-tag text-price-tag text-primary">500 FCFA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portion gourmande</span>
+</div>
+<!-- Col 3: Live Control (Toggle ON) -->
+<div class="col-span-4 flex items-center">
+<button class="pot-toggle group flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary-fixed-dim transition-all shadow-sm" onclick="togglePotStatus(this, 'Alloco piment')">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+<span class="font-label-md text-label-md state-label font-bold">✓ Dispo</span>
+</button>
+</div>
+<!-- Col 4: Actions -->
+<div class="col-span-2 flex items-center justify-end gap-space-xs">
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" title="Voir dans la boutique">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Footer Contextual Tip -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-md rounded-2xl bg-surface-container-low text-on-surface-variant mt-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">tips_and_updates</span>
+<span class="font-body-md text-body-md">
+<strong>Astuce Lomé Commerce :</strong> Fermer une marmite masque immédiatement le plat sur WhatsApp et l’app client sans annuler vos commandes en cuisine.
+        </span>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-primary font-bold cursor-pointer hover:underline">
+<span>Guide Marmites &amp; Stocks</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Interactive Slide-over / Modal (Hidden by default, triggered via JS) -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-50 hidden items-center justify-center p-space-md" id="quick-add-modal">
+<div class="bg-surface-container-lowest w-full max-w-xl rounded-[28px] p-space-xl shadow-2xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">add_box</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ajouter un nouveau plat</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface" id="btn-close-modal">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-space-2xs">Nom du plat ou produit</label>
+<input class="w-full h-12 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:bg-surface shadow-inner" placeholder="Ex: Sauce Gombo aux crabes royaux" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-space-2xs">Prix de vente (FCFA)</label>
+<input class="w-full h-12 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:bg-surface shadow-inner" placeholder="2000" type="number"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-space-2xs">Catégorie</label>
+<select class="w-full h-12 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:bg-surface shadow-inner">
+<option>Plat chaud / Cuisine</option>
+<option>Boisson artisanale</option>
+<option>Épicerie en sachet</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-md pt-space-sm">
+<button class="px-space-lg h-12 rounded-full bg-surface-container text-on-surface font-label-md" id="btn-cancel-modal">
+          Annuler
+        </button>
+<button class="px-space-xl h-12 rounded-full bg-primary text-on-primary font-label-lg shadow-md hover:bg-primary-container transition-all" onclick="confirmNewProduct()">
+          Enregistrer le plat
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Stock adjustment function
+  function changeStock(elementId, delta) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    let current = parseInt(el.innerText, 10) || 0;
+    let updated = Math.max(0, current + delta);
+    el.innerText = updated;
+  }
+
+  // Quick replenish simulation
+  function replenishBissap(qty) {
+    const el = document.getElementById('bissap-count');
+    if (!el) return;
+    let current = parseInt(el.innerText, 10) || 0;
+    el.innerText = current + qty;
+    el.classList.remove('text-error');
+    el.classList.add('text-on-surface');
+  }
+
+  // Interactive Live Pot Status Toggle
+  function togglePotStatus(btn, productName) {
+    const label = btn.querySelector('.state-label');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const isAvailable = btn.classList.contains('bg-primary-fixed');
+
+    if (isAvailable) {
+      // Transition to Closed
+      btn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed', 'hover:bg-primary-fixed-dim');
+      btn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed-variant', 'hover:bg-secondary-fixed-dim');
+      icon.innerText = 'lock';
+      icon.classList.remove('text-primary');
+      icon.classList.add('text-secondary');
+      label.innerHTML = "Fini aujourd&rsquo;hui &mdash; r&eacute;ouvrir";
+    } else {
+      // Transition to Open
+      btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed', 'hover:bg-primary-fixed-dim');
+      btn.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed-variant', 'hover:bg-secondary-fixed-dim');
+      icon.innerText = 'check_circle';
+      icon.classList.add('text-primary');
+      icon.classList.remove('text-secondary');
+      label.innerHTML = "Dispo &mdash; cl&ocirc;turer la journ&eacute;e";
+    }
+  }
+
+  // Modal interactions
+  const modal = document.getElementById('quick-add-modal');
+  const btnOpen = document.getElementById('btn-open-modal');
+  const btnClose = document.getElementById('btn-close-modal');
+  const btnCancel = document.getElementById('btn-cancel-modal');
+
+  if (btnOpen && modal) {
+    btnOpen.addEventListener('click', () => modal.classList.remove('hidden'), modal.classList.add('flex'));
+  }
+  if (btnClose && modal) {
+    btnClose.addEventListener('click', () => modal.classList.add('hidden'), modal.classList.remove('flex'));
+  }
+  if (btnCancel && modal) {
+    btnCancel.addEventListener('click', () => modal.classList.add('hidden'), modal.classList.remove('flex'));
+  }
+
+  function confirmNewProduct() {
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  }
+
+  // Radio Card Selector Styling Synchronizer
+  const cards = document.querySelectorAll('.prep-option');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => {
+        c.classList.remove('bg-surface', 'shadow-md');
+        c.classList.add('bg-surface-container-low');
+        const check = c.querySelector('.radio-indicator');
+        if (check) {
+          check.classList.remove('bg-primary', 'text-on-primary');
+          check.classList.add('bg-surface-variant', 'text-transparent');
+        }
+      });
+      card.classList.add('bg-surface', 'shadow-md');
+      card.classList.remove('bg-surface-container-low');
+      const activeCheck = card.querySelector('.radio-indicator');
+      if (activeCheck) {
+        activeCheck.classList.add('bg-primary', 'text-on-primary');
+        activeCheck.classList.remove('bg-surface-variant', 'text-transparent');
+      }
+    });
+  });
+</script></main></div></body></html>

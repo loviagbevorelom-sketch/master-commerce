@@ -1,0 +1,169 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans:       ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading:    ["var(--font-sora)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono:       ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
+        inter:      ["var(--font-inter)", "ui-sans-serif"],
+        sora:       ["var(--font-sora)", "ui-sans-serif"],
+        "jb-mono":  ["var(--font-jetbrains-mono)", "ui-monospace"],
+
+        // Stitch exact typography mappings
+        "body-sm":            ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        "body-md":            ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        "body-lg":            ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        "label-sm":           ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        "label-md":           ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        "label-lg":           ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        "headline-sm":        ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "headline-md":        ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "headline-lg":        ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "headline-xl":        ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "headline-lg-mobile": ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "headline-xl-mobile": ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "numeric-price":      ["var(--font-sora)", "ui-sans-serif", "sans-serif"],
+        "thermal-mono":       ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
+      },
+      colors: {
+        // ── Stitch surface palette ──────────────────────────────────
+        surface:                     "#fcf9f8",
+        "surface-dim":               "#dcd9d9",
+        "surface-bright":            "#fcf9f8",
+        "surface-container-lowest":  "#ffffff",
+        "surface-container-low":     "#f6f3f2",
+        "surface-container":         "#f0eded",
+        "surface-container-high":    "#eae7e7",
+        "surface-container-highest": "#e5e2e1",
+        "on-surface":                "#1c1b1b",
+        "on-surface-variant":        "#5a413b",
+        "inverse-surface":           "#313030",
+        "inverse-on-surface":        "#f3f0ef",
+        "surface-variant":           "#e5e2e1",
+        background:                  "#fcf9f8",
+        "on-background":             "#1c1b1b",
+
+        // ── Primary — Terracotta Brique ─────────────────────────────
+        primary:              "#b02609",
+        "on-primary":         "#ffffff",
+        "primary-container":  "#d34022",
+        "on-primary-container": "#fffbff",
+        "inverse-primary":    "#ffb4a4",
+        "primary-fixed":      "#ffdad3",
+        "primary-fixed-dim":  "#ffb4a4",
+        "on-primary-fixed":   "#3e0500",
+        "on-primary-fixed-variant": "#8d1700",
+        "surface-tint":       "#b4290c",
+
+        // ── Secondary — Forest Muted Green ─────────────────────────
+        secondary:              "#376757",
+        "on-secondary":         "#ffffff",
+        "secondary-container":  "#baeed9",
+        "on-secondary-container": "#3d6d5d",
+        "secondary-fixed":      "#baeed9",
+        "secondary-fixed-dim":  "#9ed1bd",
+        "on-secondary-fixed":   "#002117",
+        "on-secondary-fixed-variant": "#1d4f40",
+
+        // ── Tertiary — Deep Forest / WhatsApp Green proxy ──────────
+        tertiary:              "#006b2e",
+        "on-tertiary":         "#ffffff",
+        "tertiary-container":  "#00873c",
+        "on-tertiary-container": "#f7fff3",
+        "tertiary-fixed":      "#66ff8e",
+        "tertiary-fixed-dim":  "#3de273",
+        "on-tertiary-fixed":   "#002109",
+        "on-tertiary-fixed-variant": "#005322",
+
+        // ── Semantic ────────────────────────────────────────────────
+        error:                "#ba1a1a",
+        "on-error":           "#ffffff",
+        "error-container":    "#ffdad6",
+        "on-error-container": "#93000a",
+
+        // ── Outline / Border ───────────────────────────────────────
+        outline:          "#8e706a",
+        "outline-variant": "#e3beb7",
+
+        // ── WhatsApp exclusive ─────────────────────────────────────
+        whatsapp:       "#25D366",
+        "whatsapp-hover": "#1FB855",
+
+        // ── Legacy aliases (pour compatibilité composants existants) ─
+        cream:   "#fcf9f8",
+        ink:     "#1c1b1b",
+        muted:   "#5a413b",
+        line:    "#e3beb7",
+        ember: {
+          DEFAULT: "#b02609",
+          dark:    "#8d1700",
+          soft:    "#ffdad3",
+        },
+        forest: {
+          DEFAULT: "#376757",
+          dark:    "#1d4f40",
+          light:   "#baeed9",
+        },
+      },
+      spacing: {
+        "space-2xs": "0.25rem",
+        "space-xs":  "0.5rem",
+        "space-sm":  "0.75rem",
+        "space-md":  "1rem",
+        "space-lg":  "1.25rem",
+        "space-xl":  "1.5rem",
+        "space-2xl": "2rem",
+        "space-3xl": "2.5rem",
+        "space-4xl": "3rem",
+        "container-tunnel":  "540px",
+        "container-catalog": "1140px",
+        "gutter": "1.25rem",
+      },
+      maxWidth: {
+        "tunnel":          "540px",
+        "catalog":         "1140px",
+        "container-tunnel":  "540px",
+        "container-catalog": "1140px",
+      },
+      borderRadius: {
+        sm:      "0.25rem",
+        DEFAULT: "0.5rem",
+        md:      "0.75rem",
+        lg:      "1rem",
+        xl:      "1.5rem",
+        full:    "9999px",
+      },
+      fontSize: {
+        // ── Stitch typography scale ──────────────────────────────────
+        "headline-xl":        ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "headline-xl-mobile": ["30px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "headline-lg":        ["32px", { lineHeight: "40px", letterSpacing: "-0.015em", fontWeight: "600" }],
+        "headline-lg-mobile": ["24px", { lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "600" }],
+        "headline-md":        ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "headline-sm":        ["18px", { lineHeight: "24px", fontWeight: "600" }],
+        "body-lg":            ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "body-md":            ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "body-sm":            ["12px", { lineHeight: "16px", fontWeight: "400" }],
+        "label-lg":           ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+        "label-md":           ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+        "label-sm":           ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }],
+        "numeric-price":      ["18px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "thermal-mono":       ["12px", { lineHeight: "18px", fontWeight: "500" }],
+      },
+      boxShadow: {
+        "card":     "0 1px 3px rgba(26,26,26,0.04), 0 1px 2px rgba(26,26,26,0.02)",
+        "card-hover": "0 6px 16px -4px rgba(26,26,26,0.08), 0 2px 6px -2px rgba(26,26,26,0.03)",
+        "sticky":   "0 -4px 20px rgba(26,26,26,0.07)",
+        "dialog":   "0 8px 30px rgba(26,26,26,0.06)",
+        "ticket":   "0 8px 24px -6px rgba(27,77,62,0.08)",
+      },
+    },
+  },
+  plugins: [],
+};
