@@ -85,7 +85,7 @@ export default async function CataloguePage({ params, searchParams }: Props) {
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="max-w-2xl min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <h1 className="font-heading text-[32px] md:text-[42px] leading-tight text-on-surface font-extrabold truncate w-full sm:w-auto">
+                  <h1 className="font-heading text-[28px] sm:text-[36px] md:text-[42px] leading-tight text-on-surface font-extrabold break-words w-full sm:w-auto">
                     {shop.name}
                   </h1>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-bold shadow-sm shrink-0">
@@ -206,7 +206,7 @@ export default async function CataloguePage({ params, searchParams }: Props) {
         </div>
       </main>
 
-      <SiteFooter name={shop.name} whatsapp={shop.whatsapp_number} />
+      <SiteFooter name={shop.name} whatsapp={shop.whatsapp_number} slug={slug} />
     </>
   );
 }
