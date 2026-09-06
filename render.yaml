@@ -60,9 +60,6 @@ services:
       - key: NODE_VERSION
         value: 20.17.0
       - key: NEXT_PUBLIC_API_URL
-        fromService:
-          name: master-commerce-api
-          type: web
-          property: url
+        value: https://master-commerce-api.onrender.com
       - key: NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY
         sync: false
