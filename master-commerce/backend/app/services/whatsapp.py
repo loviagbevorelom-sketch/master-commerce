@@ -1,5 +1,4 @@
 """⭐ SEUL endroit du projet où un lien WhatsApp est construit (R5)."""
-import re
 from urllib.parse import quote
 
 
@@ -16,7 +15,7 @@ def build_checkout_link(
     delivery_fee: float = 0.0,
     order_ref: str | None = None,
 ) -> str:
-    number = re.sub(r"\D", "", whatsapp_number or "")
+    number = whatsapp_number.lstrip("+")
     lines_txt = "\n".join(
         f"• {p.name} x{qty} — {unit:,.0f} {currency}".replace(",", " ")
         for p, qty, unit in lines

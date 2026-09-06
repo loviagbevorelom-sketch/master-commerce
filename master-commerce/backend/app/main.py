@@ -116,12 +116,12 @@ try:
 
     # 5. Plats Kubafoodies
     dishes = [
-        ("Tchiep Bou Dien au Poisson", "Riz rouge sénégalais parfumé, daurade royale braisée, chou, manioc et carottes.", 2500, None, 25, "/images/dishes/tchiep.jpg", cat_jour.id),
-        ("Pinon Rouge avec Adokougbin", "Pâte rouge traditionnelle au maïs toasté, sauce tomate concentrée et crabe frais.", 3000, 2700, 15, "/images/dishes/pinon.jpg", cat_spe.id),
-        ("Riz sauté aux épices & Poulet rôti", "Riz sauté aux petits légumes croquants accompagné d'une demi-cuisse de poulet rôti.", 2800, None, 20, "/images/dishes/poulet.jpg", cat_jour.id),
-        ("Alloco & Poisson braisé", "Bananes plantains frites dorées, mérou braisé au feu de bois et piment vert maison.", 2000, None, 30, "/images/dishes/alloco.jpg", cat_spe.id),
-        ("Jus de Bissap maison (1L)", "Infusion de fleurs d'hibiscus biologique, menthe fraîche et extrait naturel de vanille.", 1000, None, 50, "/images/dishes/bissap.jpg", cat_bois.id),
-        ("Jus de Gingembre pur (1L)", "Gingembre frais pressé à froid, ananas du Togo et une pointe de citron vert.", 1000, None, 50, "/images/dishes/gingembre.jpg", cat_bois.id),
+        ("Tchiep Bou Dien au Poisson", "Riz rouge sénégalais parfumé, daurade royale braisée, chou, manioc et carottes.", 2500, None, 25, "/images/tchiep.jpg", cat_jour.id),
+        ("Pinon Rouge avec Adokougbin", "Pâte rouge traditionnelle au maïs toasté, sauce tomate concentrée et crabe frais.", 3000, 2700, 15, "/images/pinon.jpg", cat_spe.id),
+        ("Riz sauté aux épices & Poulet rôti", "Riz sauté aux petits légumes croquants accompagné d'une demi-cuisse de poulet rôti.", 2800, None, 20, "/images/riz-poulet.jpg", cat_jour.id),
+        ("Alloco & Poisson braisé", "Bananes plantains frites dorées, mérou braisé au feu de bois et piment vert maison.", 2000, None, 30, "/images/alloco.jpg", cat_spe.id),
+        ("Jus de Bissap maison (1L)", "Infusion de fleurs d'hibiscus biologique, menthe fraîche et extrait naturel de vanille.", 1000, None, 50, "/images/bissap.jpg", cat_bois.id),
+        ("Jus de Gingembre pur (1L)", "Gingembre frais pressé à froid, ananas du Togo et une pointe de citron vert.", 1000, None, 50, "/images/gingembre.jpg", cat_bois.id),
     ]
 
     for name, desc, price, promo, stock, img, cat_id in dishes:
@@ -139,10 +139,6 @@ try:
                 category_id=cat_id,
                 is_active=True,
             ))
-        else:
-            # Correction one-shot : produits seedés avec les anciens chemins /images/* (cassés)
-            if existing_p.image_path and existing_p.image_path.startswith("/images/") and existing_p.image_path != img:
-                existing_p.image_path = img
     db.commit()
 
     # 6. Zones de livraison (Lomé)
