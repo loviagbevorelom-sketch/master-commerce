@@ -1,0 +1,15 @@
+name: Keep Website Warm
+
+on:
+  schedule:
+    - cron: "*/14 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping API health endpoint
+        run: curl -sS -o /dev/null -w "API health: %{http_code}\n" "https://master-commerce-api.onrender.com/health" || true
+      - name: Ping web storefront
+        run: curl -sS -o /dev/null -w "Web storefront: %{http_code}\n" "https://master-commerce-web.onrender.com/kubafoodies" || true
