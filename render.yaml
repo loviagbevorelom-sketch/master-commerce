@@ -35,6 +35,12 @@ services:
         value: 1440
       - key: CORS_ORIGINS
         value: "https://*.onrender.com,http://localhost:3000"
+      - key: FEDAPAY_ENVIRONMENT
+        value: sandbox
+      - key: FEDAPAY_SECRET_KEY
+        sync: false # Set via Render Dashboard or leave sandbox default
+      - key: FEDAPAY_PUBLIC_KEY
+        sync: false
       - key: PYTHON_VERSION
         value: 3.11.9
 
@@ -54,4 +60,9 @@ services:
       - key: NODE_VERSION
         value: 20.17.0
       - key: NEXT_PUBLIC_API_URL
-        value: https://master-commerce-api.onrender.com
+        fromService:
+          name: master-commerce-api
+          type: web
+          property: url
+      - key: NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY
+        sync: false
