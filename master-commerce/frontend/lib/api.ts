@@ -32,16 +32,12 @@ export interface CheckoutPayload {
   customer_phone: string;
   reception_mode: "delivery" | "pickup";
   delivery_zone_id: number | null;
-  payment_method?: "cod" | "fedapay";
 }
 
 export interface CheckoutResult {
   order_ref: string;
   whatsapp_link: string;
   total: number;
-  payment_method?: string;
-  payment_status?: string;
-  payment_url?: string | null;
 }
 
 export async function placeOrder(
@@ -58,13 +54,6 @@ export async function placeOrder(
     throw new Error(detail.detail ?? "Erreur lors de la commande");
   }
   return res.json();
-}
-
-export async function simulateFedaPayPayment(ref: string): Promise<boolean> {
-  const res = await fetch(`${API}/public/fedapay/simulate-success/${ref}`, {
-    method: "POST",
-  });
-  return res.ok;
 }
 
 export const API_BASE = API;

@@ -33,7 +33,6 @@ export default function CheckoutPage() {
   const [shop, setShop] = useState({ name: "Ma boutique", currency: "FCFA", whatsapp: "" });
   const [zones, setZones] = useState<DeliveryZone[]>([]);
   const [reception, setReception] = useState<"delivery" | "pickup">("delivery");
-  const [paymentMethod, setPaymentMethod] = useState<"cod" | "fedapay">("cod");
   const [zoneId, setZoneId] = useState<number | null>(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -73,16 +72,10 @@ export default function CheckoutPage() {
         customer_phone: phone,
         reception_mode: reception,
         delivery_zone_id: reception === "delivery" ? zoneId : null,
-        payment_method: paymentMethod,
       });
       localStorage.setItem("mc_last_order", res.order_ref);
       clear();
-
-      if (paymentMethod === "fedapay" && res.payment_url) {
-        window.location.href = res.payment_url;
-      } else {
-        router.push(`/${slug}/order/${res.order_ref}`);
-      }
+      router.push(`/${slug}/order/${res.order_ref}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur inconnue");
       setLoading(false);
@@ -130,13 +123,13 @@ export default function CheckoutPage() {
             <div className="flex flex-col gap-space-2xs text-center">
               <div className="inline-flex items-center justify-center gap-space-2xs self-center px-space-sm py-space-2xs rounded-full bg-secondary-container text-on-secondary-container font-sans text-label-sm">
                 <span className="material-symbols-outlined text-[14px]">bolt</span>
-                <span>Commande rapide &amp; sécurisée</span>
+                <span>Commande express via WhatsApp</span>
               </div>
               <h1 className="font-heading text-headline-md text-on-surface tracking-tight mt-space-2xs">
-                Finaliser ma commande
+                Vérifiez votre commande
               </h1>
               <p className="font-sans text-body-md text-on-surface-variant">
-                Paiement en ligne FedaPay Sandbox ou à la livraison
+                Sans compte — confirmation directe sur WhatsApp
               </p>
             </div>
 
@@ -216,7 +209,7 @@ export default function CheckoutPage() {
                       </span>
                     </div>
                     <div>
-                      <p className="font-sans text-label-lg text-on-surface">Retrait sur place</p>
+                      <p className="font-sans text-label-lg text-on-surface font-bold">Retrait sur place</p>
                       <p className="font-sans text-body-sm text-tertiary font-semibold">Gratuit</p>
                     </div>
                   </label>
@@ -242,30 +235,26 @@ export default function CheckoutPage() {
                       </span>
                     </div>
                     <div>
-                      <p className="font-sans text-label-lg text-on-surface">Livraison à domicile</p>
+                      <p className="font-sans text-label-lg text-on-surface font-bold">Livraison à domicile</p>
                       <p className="font-sans text-body-sm text-on-surface-variant">Frais selon quartier</p>
                     </div>
                   </label>
                 </div>
               </section>
 
-              {/* ── Section 3 : Zone de livraison (conditionnelle) ───── */}
+              {/* ── Section 2 bis : Zone de livraison (conditionnelle) ── */}
               {reception === "delivery" && zones.length > 0 && (
-                <section className="flex flex-col gap-space-sm">
-                  <div className="flex items-center gap-space-xs">
-                    <StepBadge n="3" />
-                    <h2 className="font-heading text-headline-sm text-on-surface">Zone de livraison</h2>
-                  </div>
+                <section className="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl">
                   <div className="flex flex-col gap-space-xs">
                     <label className="font-sans text-label-md text-on-surface-variant" htmlFor="zone-select">
-                      Sélectionnez votre quartier *
+                      Sélectionnez votre quartier à Lomé *
                     </label>
                     <div className="relative">
                       <select
                         id="zone-select"
                         value={zoneId ?? ""}
                         onChange={(e) => setZoneId(Number(e.target.value))}
-                        className="w-full h-12 px-space-md pr-10 rounded-xl bg-surface-container-low text-on-surface font-sans text-body-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer"
+                        className="w-full h-12 px-space-md pr-10 rounded-xl bg-surface-container-lowest text-on-surface font-sans text-body-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer border border-[#eae7e7]"
                       >
                         {zones.map((z) => (
                           <option key={z.id} value={z.id}>
@@ -289,79 +278,16 @@ export default function CheckoutPage() {
                       placeholder="Ex: Face pharmacie, portail bleu"
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      className="w-full h-12 px-space-md rounded-xl bg-surface-container-low text-on-surface font-sans text-body-md placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full h-12 px-space-md rounded-xl bg-surface-container-lowest text-on-surface font-sans text-body-md placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary border border-[#eae7e7]"
                     />
                   </div>
                 </section>
               )}
 
-              {/* ── Section 4 : Mode de paiement (FedaPay vs COD) ────── */}
+              {/* ── Section 3 : Coordonnées ──────────────────────────── */}
               <section className="flex flex-col gap-space-sm">
                 <div className="flex items-center gap-space-xs">
-                  <StepBadge n={reception === "delivery" ? "4" : "3"} />
-                  <h2 className="font-heading text-headline-sm text-on-surface">Mode de paiement</h2>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                  {/* Paiement à la livraison */}
-                  <label
-                    className={`cursor-pointer relative p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-all flex flex-col justify-between gap-space-xs border ${
-                      paymentMethod === "cod" ? "border-[#D32F2F] ring-2 ring-[#D32F2F]/20 shadow-[0_0_0_3px_rgba(211,47,47,0.08)]" : "border-[#eae7e7]"
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="payment_method"
-                      value="cod"
-                      checked={paymentMethod === "cod"}
-                      onChange={() => setPaymentMethod("cod")}
-                      className="sr-only"
-                    />
-                    <div className="flex items-center justify-between">
-                      <span className="material-symbols-outlined text-on-surface-variant text-[22px]">payments</span>
-                      <span className={`w-4 h-4 rounded-full flex items-center justify-center ${paymentMethod === "cod" ? "bg-[#D32F2F]" : "bg-surface-container-highest"}`}>
-                        <span className={`w-2 h-2 rounded-full bg-white ${paymentMethod === "cod" ? "opacity-100" : "opacity-0"} transition-opacity`} />
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-sans text-label-lg text-on-surface font-bold">À la livraison</p>
-                      <p className="font-sans text-body-sm text-on-surface-variant">Espèces / T-Money à la réception</p>
-                    </div>
-                  </label>
-
-                  {/* Paiement en ligne (FedaPay Sandbox) */}
-                  <label
-                    className={`cursor-pointer relative p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-all flex flex-col justify-between gap-space-xs border ${
-                      paymentMethod === "fedapay" ? "border-blue-600 ring-2 ring-blue-600/20 shadow-[0_0_0_3px_rgba(37,99,235,0.08)]" : "border-[#eae7e7]"
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="payment_method"
-                      value="fedapay"
-                      checked={paymentMethod === "fedapay"}
-                      onChange={() => setPaymentMethod("fedapay")}
-                      className="sr-only"
-                    />
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-blue-600 font-bold text-xs bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
-                        <span>💳 FedaPay</span>
-                      </div>
-                      <span className={`w-4 h-4 rounded-full flex items-center justify-center ${paymentMethod === "fedapay" ? "bg-blue-600" : "bg-surface-container-highest"}`}>
-                        <span className={`w-2 h-2 rounded-full bg-white ${paymentMethod === "fedapay" ? "opacity-100" : "opacity-0"} transition-opacity`} />
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-sans text-label-lg text-on-surface font-bold">Paiement en ligne</p>
-                      <p className="font-sans text-body-sm text-blue-600 font-medium">T-Money, Flooz, MTN &amp; Carte</p>
-                    </div>
-                  </label>
-                </div>
-              </section>
-
-              {/* ── Section 5 : Coordonnées ──────────────────────────── */}
-              <section className="flex flex-col gap-space-sm">
-                <div className="flex items-center gap-space-xs">
-                  <StepBadge n={reception === "delivery" ? "5" : "4"} />
+                  <StepBadge n="3" />
                   <h2 className="font-heading text-headline-sm text-on-surface">Vos coordonnées</h2>
                 </div>
                 <div className="flex flex-col gap-space-xs">
@@ -405,7 +331,7 @@ export default function CheckoutPage() {
                 </div>
               </section>
 
-              {/* ── Section 6 : Ticket synthèse des coûts ───────────── */}
+              {/* ── Synthèse des coûts ───────────────────────────────── */}
               <section className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs shadow-inner">
                 <div className="flex items-center justify-between font-sans text-body-md text-on-surface-variant">
                   <span>Sous-total articles</span>
@@ -434,14 +360,10 @@ export default function CheckoutPage() {
                 </div>
                 <div className="mt-space-xs p-space-xs rounded-lg bg-surface-container-lowest flex items-start gap-space-xs">
                   <span className="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">
-                    {paymentMethod === "fedapay" ? "verified" : "credit_card_off"}
+                    payments
                   </span>
                   <p className="font-sans text-[12px] leading-snug text-on-surface-variant">
-                    {paymentMethod === "fedapay" ? (
-                      <span><strong>Paiement sécurisé FedaPay Sandbox.</strong> Validation en ligne instantanée par Mobile Money / Carte.</span>
-                    ) : (
-                      <span><strong>Paiement à la livraison.</strong> Règlement en espèces ou transfert T-Money à la réception.</span>
-                    )}
+                    <strong>Paiement à la livraison / réception.</strong> Règlement en espèces ou transfert T-Money à l&apos;arrivée.
                   </p>
                 </div>
               </section>
@@ -473,29 +395,16 @@ export default function CheckoutPage() {
 
               {/* ── CTA Principal ─────────────────────────────────────── */}
               <div className="flex flex-col gap-space-xs pt-space-xs">
-                {paymentMethod === "fedapay" ? (
-                  <button
-                    type="submit"
-                    disabled={loading || items.length === 0}
-                    className="w-full h-12 rounded-[14px] bg-blue-600 hover:bg-blue-700 text-white font-sans text-label-lg flex items-center justify-center gap-space-xs shadow-lg active:translate-y-[1px] transition-all disabled:opacity-60 font-bold"
-                  >
-                    <span className="material-symbols-outlined text-[20px]">credit_card</span>
-                    <span>{loading ? "Initialisation FedaPay…" : "Payer avec FedaPay (Mobile Money / Carte)"}</span>
-                  </button>
-                ) : (
-                  <button
-                    type="submit"
-                    disabled={loading || items.length === 0}
-                    className="w-full h-12 rounded-[14px] bg-whatsapp hover:bg-whatsapp-hover text-white font-sans text-label-lg flex items-center justify-center gap-space-xs shadow-whatsapp active:translate-y-[1px] transition-all disabled:opacity-60 font-bold"
-                  >
-                    <WaIcon />
-                    <span>{loading ? "Enregistrement…" : "Confirmer ma commande sur WhatsApp"}</span>
-                  </button>
-                )}
+                <button
+                  type="submit"
+                  disabled={loading || items.length === 0}
+                  className="w-full h-12 rounded-[14px] bg-whatsapp hover:bg-whatsapp-hover text-white font-sans text-label-lg flex items-center justify-center gap-space-xs shadow-whatsapp active:translate-y-[1px] transition-all disabled:opacity-60 font-bold"
+                >
+                  <WaIcon />
+                  <span>{loading ? "Enregistrement…" : "Confirmer ma commande sur WhatsApp"}</span>
+                </button>
                 <p className="font-sans text-[11px] text-center text-on-surface-variant">
-                  {paymentMethod === "fedapay"
-                    ? "Vous serez redirigé vers le guichet sécurisé FedaPay Sandbox."
-                    : "Votre commande sera enregistrée et confirmée sur WhatsApp."}
+                  Votre commande sera enregistrée et envoyée directement sur WhatsApp.
                 </p>
               </div>
 

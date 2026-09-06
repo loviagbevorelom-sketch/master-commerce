@@ -1,28 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { formatPrice } from "@/lib/format";
 import { Order } from "@/lib/types";
-import { simulateFedaPayPayment } from "@/lib/api";
 
 export default function OrderTicket({ slug, order }: { slug: string; order: Order }) {
   const isPickup = order.reception_mode === "pickup";
-  const isPaid = order.payment_status === "paid";
-  const isFedaPay = order.payment_method === "fedapay";
-
-  const [simulating, setSimulating] = useState(false);
-
-  async function handleSimulate() {
-    setSimulating(true);
-    const ok = await simulateFedaPayPayment(order.ref);
-    if (ok) {
-      window.location.reload();
-    } else {
-      alert("Erreur lors de la simulation FedaPay");
-      setSimulating(false);
-    }
-  }
 
   return (
     <div className="flex flex-col gap-6">
@@ -33,17 +16,15 @@ export default function OrderTicket({ slug, order }: { slug: string; order: Orde
         <div className="relative flex flex-col items-center text-center gap-2">
           <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-1 shadow-inner">
             <span className="material-symbols-outlined text-[34px] text-white">
-              {isPaid ? "verified" : "check_circle"}
+              check_circle
             </span>
           </div>
           <span className="font-bold text-2xl sm:text-3xl tracking-tight">
-            {isPaid ? "Paiement FedaPay Validé ! 🎉" : "Commande enregistrée !"}
+            Commande reçue ! 🎉
           </span>
           <span className="text-sm text-white/90 max-w-md leading-relaxed">
-            {isPaid
-              ? "Votre paiement en ligne FedaPay a été confirmé. La cuisine prépare votre commande."
-              : isPickup
-              ? "Récupérez votre commande au comptoir. Confirmez sur WhatsApp pour finaliser."
+            {isPickup
+              ? "Récupérez votre commande au comptoir. Confirmez sur WhatsApp pour finaliser la préparation."
               : "L'équipe prépare votre commande. Confirmez sur WhatsApp pour finaliser la livraison."}
           </span>
           <div className="mt-3 inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 text-sm font-semibold tracking-wide border border-white/20">
@@ -67,34 +48,6 @@ export default function OrderTicket({ slug, order }: { slug: string; order: Orde
               minute: "2-digit",
             })}
           </span>
-        </div>
-
-        {/* Badge mode & statut de paiement */}
-        <div className="mb-6 p-4 rounded-2xl bg-surface-container-low border border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-on-surface">Mode de règlement :</span>
-            {isFedaPay ? (
-              <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200">
-                💳 FedaPay Sandbox (En Ligne)
-              </span>
-            ) : (
-              <span className="px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-bold border border-amber-200">
-                💵 Paiement à la livraison (COD)
-              </span>
-            )}
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-on-surface">Statut du paiement :</span>
-            {isPaid ? (
-              <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 flex items-center gap-1">
-                <span>✓</span> Payé
-              </span>
-            ) : (
-              <span className="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 font-bold border border-amber-300">
-                ⏳ En attente
-              </span>
-            )}
-          </div>
         </div>
 
         <div className="border-t border-dashed border-surface-container-high py-4 flex items-center justify-between text-sm">
@@ -150,7 +103,7 @@ export default function OrderTicket({ slug, order }: { slug: string; order: Orde
             </span>
           </div>
           <div className="flex justify-between items-center mt-2">
-            <span className="font-bold text-base text-on-surface">Total</span>
+            <span className="font-bold text-base text-on-surface">Total à payer</span>
             <span className="text-xl font-black text-[#D32F2F]">
               {formatPrice(order.total, order.currency)}
             </span>
@@ -161,36 +114,6 @@ export default function OrderTicket({ slug, order }: { slug: string; order: Orde
           Master Commerce · {order.ref}
         </div>
       </div>
-
-      {/* Actions de paiement FedaPay Sandbox si en attente */}
-      {isFedaPay && !isPaid && (
-        <div className="p-5 rounded-2xl bg-blue-50/80 border border-blue-200 flex flex-col gap-3">
-          <div className="flex items-center gap-2 text-blue-900 font-bold text-sm">
-            <span>⚡ Payer via FedaPay Sandbox</span>
-          </div>
-          <p className="text-xs text-blue-800">
-            Finalisez votre règlement via Mobile Money (T-Money, Flooz) ou Carte bancaire Sandbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-2 pt-1">
-            {order.payment_url && (
-              <a
-                href={order.payment_url}
-                className="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
-              >
-                <span>💳 Accéder au guichet FedaPay Sandbox</span>
-              </a>
-            )}
-            <button
-              type="button"
-              onClick={handleSimulate}
-              disabled={simulating}
-              className="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all disabled:opacity-60"
-            >
-              <span>{simulating ? "Validation..." : "⚡ Simuler succès FedaPay (Sandbox)"}</span>
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Actions globales */}
       <div className="flex flex-col sm:flex-row gap-3">
